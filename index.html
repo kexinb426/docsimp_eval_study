@@ -13,15 +13,9 @@
         h1, h2, h3 { color: #0056b3; }
         h2 { border-bottom: 1px solid #eee; padding-bottom: 5px; }
         .span-evaluation { border: 1px solid #ddd; padding: 15px 20px; margin-bottom: 20px; border-radius: 8px; background-color: #fafafa; }
-        .span-quote { font-style: italic; color: #555; background-color: #eee; padding: 2px 6px; border-radius: 4px; }
-        .severity { display: inline-block; padding: 2px 8px; border-radius: 10px; color: white; font-size: 0.8em; text-transform: capitalize; }
-        .severity.medium { background-color: #f0ad4e; }
-        .severity.low { background-color: #5bc0de; }
-        .suggested-fix { color: #28a745; font-weight: bold; }
         .question-block { margin-top: 15px; }
         .question-block label { font-weight: bold; display: block; margin-bottom: 5px; }
-        .question-block input[type="radio"] { margin-right: 5px; }
-        .prolific-id-input { padding: 8px; width: 300px; margin-top: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .prolific-id-input { padding: 8px; width: 300px; margin-top: 10px; border: 1px solid #ccc; border-radius: 4px; background-color: #eee; }
         .submit-section { text-align: center; margin-top: 40px; }
         #submit-button { padding: 15px 25px; background-color: #28a745; color: white; text-decoration: none; border-radius: 8px; font-size: 20px; font-weight: bold; border: none; cursor: pointer; }
         #submit-button:disabled { background-color: #ccc; }
@@ -32,34 +26,30 @@
 
 <form id="evaluation-form">
     <div class="header">
-        <h1>Document Evaluation: Banksia aculeata</h1>
-        <p><strong>Instructions:</strong> Please enter your Prolific ID, read the documents, and answer the questions for each highlighted span below. When you are finished, click the submit button at the bottom.</p>
-        
+        <h1>Document Evaluation</h1>
+        <p>Your Prolific ID has been automatically recorded. Please review the documents and answer the questions below.</p>
         <div class="question-block">
             <label for="prolific-id">Prolific ID</label>
-            <input type="text" id="prolific-id" class="prolific-id-input" name="entry.712531781" placeholder="Enter Prolific ID here" required>
+            <input type="text" id="prolific-id" class="prolific-id-input" name="entry.712531781" placeholder="Loading Prolific ID..." required>
         </div>
     </div>
-
+    
     <div class="container">
         <div class="document">
             <h2>Original Document</h2>
-            <p>Banksia aculeata, commonly known as prickly banksia, is a species of plant of the family Proteaceae native to the Stirling Range in the southwest of Western Australia. A shrub up to 2 m (7 ft) tall, it has dense foliage and leaves with very prickly serrated margins. Its unusual pinkish, pendent (hanging) flower spikes, known as inflorescences, are generally hidden in the foliage and appear during the early summer. Although it was collected by the naturalist James Drummond in the 1840s, Banksia aculeata was not formally described until 1981, by Alex George in his monograph of the genus. A rare plant, Banksia aculeata is found in gravelly soils in elevated areas. Native to a habitat burnt by periodic bushfires, it is killed by fire and regenerates from seed afterwards. In contrast to other Western Australian banksias, it appears to have some resistance to the soil-borne water mould Phytophthora cinnamomi.</p>
+            <p>Banksia aculeata, commonly known as prickly banksia...</p>
         </div>
-
         <div id="simplified-doc" class="document">
             <h2>Simplified Document</h2>
-            <p>Banksia aculeata, also called prickly banksia, is a type of plant from the Proteaceae family. It naturally grows in the Stirling Range in the southwest of Western Australia. This shrub can grow up to about 2 meters (7 feet) tall. It has thick leaves with very sharp, jagged edges. It has unusual pinkish flowers that hang downwards and are generally hidden in the leaves, showing up in early summer. Even though the naturalist James Drummond collected it in the 1840s, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species. Banksia aculeata is a rare plant that grows in gravelly soils in high places. It lives in areas that get burned by bushfires from time to time. The plant is killed by fire, but regrows from its seeds afterwards. Unlike other banksias in Western Australia, it seems to be somewhat resistant to a soil-borne mould called Phytophthora cinnamomi.</p>
+            <p>Banksia aculeata, also called prickly banksia, is a type of plant...</p>
         </div>
     </div>
 
     <div class="evaluation-area">
         <h2>Span Evaluations</h2>
-
+        
         <div class="span-evaluation">
-            <h3>1. Span: <span class="span-quote">Proteaceae family</span> <span class="severity medium">medium</span></h3>
-            <p><strong>Issue:</strong> The term 'Proteaceae family' may not be familiar...</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'a family of flowering plants...'</span></p>
+            <h3>1. Span: "Proteaceae family"</h3>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.371527831" value="Yes" required> Yes
@@ -74,9 +64,7 @@
         </div>
 
         <div class="span-evaluation">
-            <h3>2. Span: <span class="span-quote">It naturally grows...</span> <span class="severity low">low</span></h3>
-            <p><strong>Issue:</strong> The phrase 'naturally grows' could be simplified...</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'It grows naturally...'</span></p>
+            <h3>2. Span: "It naturally grows..."</h3>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.1063948710" value="Yes" required> Yes
@@ -91,9 +79,7 @@
         </div>
         
         <div class="span-evaluation">
-            <h3>3. Span: <span class="span-quote">Even though the naturalist...</span> <span class="severity medium">medium</span></h3>
-            <p><strong>Issue:</strong> This sentence is long and contains multiple pieces of information...</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Break into two sentences...</span></p>
+            <h3>3. Span: "Even though the naturalist..."</h3>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.1057746107" value="Yes" required> Yes
@@ -106,11 +92,9 @@
                 <input type="radio" name="entry.909543965" value="It makes no difference"> No Difference
             </div>
         </div>
-        
+
         <div class="span-evaluation">
-            <h3>4. Span: <span class="span-quote">It lives in areas that get burned...</span> <span class="severity low">low</span></h3>
-            <p><strong>Issue:</strong> The phrase 'from time to time' is vague...</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'It lives in areas that are occasionally burned...'</span></p>
+            <h3>4. Span: "It lives in areas that get burned..."</h3>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.588599697" value="Yes" required> Yes
@@ -123,11 +107,9 @@
                 <input type="radio" name="entry.287978224" value="It makes no difference"> No Difference
             </div>
         </div>
-        
+
         <div class="span-evaluation">
-            <h3>5. Span: <span class="span-quote">Unlike other banksias...</span> <span class="severity medium">medium</span></h3>
-            <p><strong>Issue:</strong> The phrase 'seems to be somewhat resistant' is indirect...</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'it is somewhat resistant...'</span></p>
+            <h3>5. Span: "Unlike other banksias..."</h3>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.1742029395" value="Yes" required> Yes
@@ -143,13 +125,28 @@
     </div>
 
     <div class="submit-section">
-        <button type="submit" id="submit-button">Submit My Answers</button>
-        <p id="success-message" style="display:none; color:green; font-weight:bold;">Thank you! Your response has been submitted. You may now close this window.</p>
+        <button type="submit" id="submit-button">Submit Answers and Complete Study</button>
     </div>
 </form>
 
 <script>
     document.addEventListener('DOMContentLoaded', function() {
+        
+        // --- Part 1: Auto-fill Prolific ID ---
+        try {
+            const urlParams = new URLSearchParams(window.location.search);
+            const prolificId = urlParams.get('PROLIFIC_PID');
+            const idInput = document.querySelector('input[name="entry.712531781"]');
+
+            if (prolificId && idInput) {
+                idInput.value = prolificId;
+                idInput.readOnly = true;
+            } else if (idInput) {
+                idInput.placeholder = 'COULD NOT FIND PROLIFIC ID IN URL';
+            }
+        } catch(e) { console.error("Error getting Prolific ID:", e); }
+
+        // --- Part 2: Highlight Spans ---
         const spansToHighlight = [
             "Proteaceae family",
             "It naturally grows in the Stirling Range in the southwest of Western Australia.",
@@ -158,69 +155,60 @@
             "Unlike other banksias in Western Australia, it seems to be somewhat resistant to a soil-borne mould called Phytophthora cinnamomi."
         ];
         const simplifiedDoc = document.getElementById('simplified-doc');
-        let content = simplifiedDoc.innerHTML;
-        spansToHighlight.forEach(span => {
-            const regex = new RegExp(span.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-            content = content.replace(regex, `<mark>${span}</mark>`);
-        });
-        simplifiedDoc.innerHTML = content;
-    });
-</script>
+        if (simplifiedDoc) {
+            let content = simplifiedDoc.innerHTML;
+            spansToHighlight.forEach(span => {
+                const regex = new RegExp(span.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+                content = content.replace(regex, `<mark>${span}</mark>`);
+            });
+            simplifiedDoc.innerHTML = content;
+        }
 
-<script>
-    const form = document.getElementById('evaluation-form');
-    const submitButton = document.getElementById('submit-button');
-    const successMessage = document.getElementById('success-message');
+        // --- Part 3: Handle Form Submission ---
+        const form = document.getElementById('evaluation-form');
+        if (form) {
+            form.addEventListener('submit', function(e) {
+                // PREVENT the browser's default submission behavior
+                e.preventDefault();
 
-    form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        submitButton.disabled = true;
-        submitButton.textContent = 'Submitting...';
-        const formData = new FormData(form);
-        const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSddOIJxcLnfFFEd34mOlPkzUP31S-QKWrMM94zynYY8ASDXXg/formResponse';
+                const submitButton = document.getElementById('submit-button');
+                submitButton.disabled = true;
+                submitButton.textContent = 'Submitting, please wait...';
 
-        fetch(formActionUrl, {
-            method: 'POST',
-            body: formData,
-            mode: 'no-cors'
-        })
-        .then(response => {
-            // Hide the entire form content and show the success message
-            form.style.display = 'none';
-            successMessage.style.display = 'block';
-             // You can also add the Prolific completion code here if needed
-            successMessage.innerHTML += "<br>Your Prolific completion code is: YOUR_CODE_HERE";
-        })
-        .catch(error => {
-            console.error('Error:', error);
-            alert('An error occurred. Please try again.');
-            submitButton.disabled = false;
-            submitButton.textContent = 'Submit My Answers';
-        });
-    });
-</script>
+                // --- CONFIGURATION ---
+                const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSddOIJxcLnfFFEd34mOlPkzUP31S-QKWrMM94zynYY8ASDXXg/formResponse';
+                
+                // IMPORTANT: PASTE YOUR REAL PROLIFIC URL IN THE LINE BELOW
+                const prolificCompletionUrl = 'PASTE_YOUR_PROLIFIC_COMPLETION_URL_HERE';
+                // --- END CONFIGURATION ---
 
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        // 1. Look at the URL in the browser's address bar
-        const urlParams = new URLSearchParams(window.location.search);
-        
-        // 2. Find the value for the parameter named 'PROLIFIC_PID'
-        const prolificId = urlParams.get('PROLIFIC_PID');
+                // Check if the URL was filled
+                if (prolificCompletionUrl.includes('PASTE_YOUR_PROLIFIC')) {
+                    alert('ERROR: The prolificCompletionUrl has not been set in the HTML file. Please contact the researcher.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit Answers and Complete Study';
+                    return; // Stop the submission
+                }
 
-        // 3. If an ID was found in the URL...
-        if (prolificId) {
-            // 4. Find the input field on the page
-            const idInput = document.querySelector('input[name="entry.712531781"]');
-            if (idInput) {
-                // 5. Set the value of the input field to the ID
-                idInput.value = prolificId;
-                // Optional: Make the field read-only so the user can't change it
-                idInput.readOnly = true; 
-            }
+                fetch(formActionUrl, {
+                    method: 'POST',
+                    body: new FormData(form),
+                    mode: 'no-cors'
+                })
+                .then(response => {
+                    console.log('Submission sent. Redirecting to Prolific.');
+                    // This will now correctly redirect the user back to Prolific
+                    window.location.href = prolificCompletionUrl;
+                })
+                .catch(error => {
+                    console.error('Submission Error:', error);
+                    alert('A critical error occurred while submitting. Please refresh the page and try again. If the problem persists, please contact the researcher.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit Answers and Complete Study';
+                });
+            });
         }
     });
 </script>
-
 </body>
 </html>
