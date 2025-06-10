@@ -12,22 +12,33 @@
         .evaluation-area { width: 100%; margin-top: 30px; }
         h1, h2, h3 { color: #0056b3; }
         h2 { border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        .span-evaluation { border: 1px solid #ddd; padding: 0px 20px 15px 20px; margin-bottom: 20px; border-radius: 8px; background-color: #fafafa; }
-        .span-evaluation p { margin: 5px 0; }
+        .span-evaluation { border: 1px solid #ddd; padding: 15px 20px; margin-bottom: 20px; border-radius: 8px; background-color: #fafafa; }
         .span-quote { font-style: italic; color: #555; background-color: #eee; padding: 2px 6px; border-radius: 4px; }
         .severity { display: inline-block; padding: 2px 8px; border-radius: 10px; color: white; font-size: 0.8em; text-transform: capitalize; }
         .severity.medium { background-color: #f0ad4e; }
         .severity.low { background-color: #5bc0de; }
         .suggested-fix { color: #28a745; font-weight: bold; }
-        .submit-section { text-align: center; margin-top: 40px; padding: 30px; background-color: #e0ffe0; border: 2px solid green; border-radius: 10px; }
+        .question-block { margin-top: 15px; }
+        .question-block label { font-weight: bold; display: block; margin-bottom: 5px; }
+        .question-block input[type="radio"] { margin-right: 5px; }
+        .prolific-id-input { padding: 8px; width: 300px; margin-top: 10px; border: 1px solid #ccc; border-radius: 4px; }
+        .submit-section { text-align: center; margin-top: 40px; }
+        #submit-button { padding: 15px 25px; background-color: #28a745; color: white; text-decoration: none; border-radius: 8px; font-size: 20px; font-weight: bold; border: none; cursor: pointer; }
+        #submit-button:disabled { background-color: #ccc; }
         mark { background-color: #ffeb3b; padding: 2px 0; border-radius: 3px; }
     </style>
 </head>
 <body>
 
+<form id="evaluation-form">
     <div class="header">
         <h1>Document Evaluation: Banksia aculeata</h1>
-        <p><strong>Instructions:</strong> Please read the Original and Simplified documents. The Simplified document has several spans highlighted. For each span, please review the associated issue below and answer the questions.</p>
+        <p><strong>Instructions:</strong> Please enter your Prolific ID, read the documents, and answer the questions for each highlighted span below. When you are finished, click the submit button at the bottom.</p>
+        
+        <div class="question-block">
+            <label for="prolific-id">Prolific ID</label>
+            <input type="text" id="prolific-id" class="prolific-id-input" name="entry.1360928916" placeholder="Enter Prolific ID here" required>
+        </div>
     </div>
 
     <div class="container">
@@ -47,63 +58,147 @@
 
         <div class="span-evaluation">
             <h3>1. Span: <span class="span-quote">Proteaceae family</span> <span class="severity medium">medium</span></h3>
-            <p><strong>Issue:</strong> The term 'Proteaceae family' may not be familiar to a general audience without a background in botany.</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'a family of flowering plants known as Proteaceae.'</span></p>
+            <p><strong>Issue:</strong> The term 'Proteaceae family' may not be familiar...</p>
+            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'a family of flowering plants...'</span></p>
+            <div class="question-block">
+                <label>Do you agree with the issue identified?</label>
+                <input type="radio" name="entry.371527831" value="Yes" required> Yes
+                <input type="radio" name="entry.371527831" value="No"> No
+            </div>
+            <div class="question-block">
+                <label>Is the suggested fix an improvement?</label>
+                <input type="radio" name="entry.1108020156" value="Yes, it is an improvement" required> Yes
+                <input type="radio" name="entry.1108020156" value="No, it is not an improvement"> No
+                <input type="radio" name="entry.1108020156" value="It makes no difference"> No Difference
+            </div>
         </div>
 
         <div class="span-evaluation">
-            <h3>2. Span: <span class="span-quote">It naturally grows in the Stirling Range in the southwest of Western Australia.</span> <span class="severity low">low</span></h3>
-            <p><strong>Issue:</strong> The phrase 'naturally grows' could be simplified for clarity.</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'It grows naturally in the Stirling Range in southwest Western Australia.'</span></p>
+            <h3>2. Span: <span class="span-quote">It naturally grows...</span> <span class="severity low">low</span></h3>
+            <p><strong>Issue:</strong> The phrase 'naturally grows' could be simplified...</p>
+            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'It grows naturally...'</span></p>
+            <div class="question-block">
+                <label>Do you agree with the issue identified?</label>
+                <input type="radio" name="entry.1063948710" value="Yes" required> Yes
+                <input type="radio" name="entry.1063948710" value="No"> No
+            </div>
+            <div class="question-block">
+                <label>Is the suggested fix an improvement?</label>
+                <input type="radio" name="entry.1579240662" value="Yes, it is an improvement" required> Yes
+                <input type="radio" name="entry.1579240662" value="No, it is not an improvement"> No
+                <input type="radio" name="entry.1579240662" value="It makes no difference"> No Difference
+            </div>
         </div>
         
         <div class="span-evaluation">
-            <h3>3. Span: <span class="span-quote">Even though the naturalist James Drummond collected it in the 1840s, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species.</span> <span class="severity medium">medium</span></h3>
-            <p><strong>Issue:</strong> This sentence is long and contains multiple pieces of information, which may be difficult to follow.</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Break into two sentences: 'The naturalist James Drummond collected it in the 1840s. However, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species.'</span></p>
+            <h3>3. Span: <span class="span-quote">Even though the naturalist...</span> <span class="severity medium">medium</span></h3>
+            <p><strong>Issue:</strong> This sentence is long and contains multiple pieces of information...</p>
+            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Break into two sentences...</span></p>
+            <div class="question-block">
+                <label>Do you agree with the issue identified?</label>
+                <input type="radio" name="entry.1057746107" value="Yes" required> Yes
+                <input type="radio" name="entry.1057746107" value="No"> No
+            </div>
+            <div class="question-block">
+                <label>Is the suggested fix an improvement?</label>
+                <input type="radio" name="entry.909543965" value="Yes, it is an improvement" required> Yes
+                <input type="radio" name="entry.909543965" value="No, it is not an improvement"> No
+                <input type="radio" name="entry.909543965" value="It makes no difference"> No Difference
+            </div>
         </div>
         
         <div class="span-evaluation">
-            <h3>4. Span: <span class="span-quote">It lives in areas that get burned by bushfires from time to time.</span> <span class="severity low">low</span></h3>
-            <p><strong>Issue:</strong> The phrase 'from time to time' is vague and could be more direct.</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'It lives in areas that are occasionally burned by bushfires.'</span></p>
+            <h3>4. Span: <span class="span-quote">It lives in areas that get burned...</span> <span class="severity low">low</span></h3>
+            <p><strong>Issue:</strong> The phrase 'from time to time' is vague...</p>
+            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'It lives in areas that are occasionally burned...'</span></p>
+            <div class="question-block">
+                <label>Do you agree with the issue identified?</label>
+                <input type="radio" name="entry.588599697" value="Yes" required> Yes
+                <input type="radio" name="entry.588599697" value="No"> No
+            </div>
+            <div class="question-block">
+                <label>Is the suggested fix an improvement?</label>
+                <input type="radio" name="entry.287978224" value="Yes, it is an improvement" required> Yes
+                <input type="radio" name="entry.287978224" value="No, it is not an improvement"> No
+                <input type="radio" name="entry.287978224" value="It makes no difference"> No Difference
+            </div>
         </div>
         
         <div class="span-evaluation">
-            <h3>5. Span: <span class="span-quote">Unlike other banksias in Western Australia, it seems to be somewhat resistant to a soil-borne mould called Phytophthora cinnamomi.</span> <span class="severity medium">medium</span></h3>
-            <p><strong>Issue:</strong> The phrase 'seems to be somewhat resistant' is indirect and could be more straightforward.</p>
-            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'Unlike other banksias in Western Australia, it is somewhat resistant to a soil-borne mold called Phytophthora cinnamomi.'</span></p>
+            <h3>5. Span: <span class="span-quote">Unlike other banksias...</span> <span class="severity medium">medium</span></h3>
+            <p><strong>Issue:</strong> The phrase 'seems to be somewhat resistant' is indirect...</p>
+            <p><strong>Suggested Fix:</strong> <span class="suggested-fix">Replace with 'it is somewhat resistant...'</span></p>
+            <div class="question-block">
+                <label>Do you agree with the issue identified?</label>
+                <input type="radio" name="entry.1742029395" value="Yes" required> Yes
+                <input type="radio" name="entry.1742029395" value="No"> No
+            </div>
+            <div class="question-block">
+                <label>Is the suggested fix an improvement?</label>
+                <input type="radio" name="entry.50372195" value="Yes, it is an improvement" required> Yes
+                <input type="radio" name="entry.50372195" value="No, it is not an improvement"> No
+                <input type="radio" name="entry.50372195" value="It makes no difference"> No Difference
+            </div>
         </div>
     </div>
 
     <div class="submit-section">
-        <h2>Submit Your Answers</h2>
-        <p>After reviewing all spans, please record your answers in the linked form. A new tab will open.</p>
-        <a href="https://docs.google.com/forms/d/18x1AKzlGjmNqNMfe9C9-lkAuBC55WIm3bhVVnVFo_KE/viewform?entry.1360928916=PROLIFIC_PID_PLACEHOLDER" target="_blank" style="display:inline-block; padding: 15px 25px; background-color: #28a745; color: white; text-decoration: none; border-radius: 8px; font-size: 20px; font-weight: bold;">CLICK HERE TO RECORD ANSWERS</a>
+        <button type="submit" id="submit-button">Submit My Answers</button>
+        <p id="success-message" style="display:none; color:green; font-weight:bold;">Thank you! Your response has been submitted. You may now close this window.</p>
     </div>
+</form>
 
-    <script>
-        // This script automatically highlights the spans in the simplified document.
-        document.addEventListener('DOMContentLoaded', function() {
-            const spansToHighlight = [
-                "Proteaceae family",
-                "It naturally grows in the Stirling Range in the southwest of Western Australia.",
-                "Even though the naturalist James Drummond collected it in the 1840s, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species.",
-                "It lives in areas that get burned by bushfires from time to time.",
-                "Unlike other banksias in Western Australia, it seems to be somewhat resistant to a soil-borne mould called Phytophthora cinnamomi."
-            ];
-
-            const simplifiedDoc = document.getElementById('simplified-doc');
-            let content = simplifiedDoc.innerHTML;
-
-            spansToHighlight.forEach(span => {
-                // This regex handles potential HTML tags within the content, making it more robust.
-                const regex = new RegExp(span.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
-                content = content.replace(regex, `<mark>${span}</mark>`);
-            });
-
-            simplifiedDoc.innerHTML = content;
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const spansToHighlight = [
+            "Proteaceae family",
+            "It naturally grows in the Stirling Range in the southwest of Western Australia.",
+            "Even though the naturalist James Drummond collected it in the 1840s, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species.",
+            "It lives in areas that get burned by bushfires from time to time.",
+            "Unlike other banksias in Western Australia, it seems to be somewhat resistant to a soil-borne mould called Phytophthora cinnamomi."
+        ];
+        const simplifiedDoc = document.getElementById('simplified-doc');
+        let content = simplifiedDoc.innerHTML;
+        spansToHighlight.forEach(span => {
+            const regex = new RegExp(span.replace(/[.*+?^${}()|[\]\\]/g, '\\$&'), 'g');
+            content = content.replace(regex, `<mark>${span}</mark>`);
         });
-    </script>
+        simplifiedDoc.innerHTML = content;
+    });
+</script>
+
+<script>
+    const form = document.getElementById('evaluation-form');
+    const submitButton = document.getElementById('submit-button');
+    const successMessage = document.getElementById('success-message');
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting...';
+        const formData = new FormData(form);
+        const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSddOIJxcLnfFFEd34mOlPkzUP31S-QKWrMM94zynYY8ASDXXg/formResponse';
+
+        fetch(formActionUrl, {
+            method: 'POST',
+            body: formData,
+            mode: 'no-cors'
+        })
+        .then(response => {
+            // Hide the entire form content and show the success message
+            form.style.display = 'none';
+            successMessage.style.display = 'block';
+             // You can also add the Prolific completion code here if needed
+            successMessage.innerHTML += "<br>Your Prolific completion code is: YOUR_CODE_HERE";
+        })
+        .catch(error => {
+            console.error('Error:', error);
+            alert('An error occurred. Please try again.');
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit My Answers';
+        });
+    });
+</script>
+
 </body>
 </html>
