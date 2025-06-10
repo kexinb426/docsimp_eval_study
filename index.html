@@ -26,7 +26,7 @@
 
 <form id="evaluation-form">
     <div class="header">
-        <h1>Document Evaluation</h1>
+        <h1>Document Evaluation: Banksia aculeata</h1>
         <p>Your Prolific ID has been automatically recorded. Please review the documents and answer the questions below.</p>
         <div class="question-block">
             <label for="prolific-id">Prolific ID</label>
@@ -37,11 +37,13 @@
     <div class="container">
         <div class="document">
             <h2>Original Document</h2>
-            <p>Banksia aculeata, commonly known as prickly banksia...</p>
+            <p>Banksia aculeata, commonly known as prickly banksia, is a species of plant of the family Proteaceae native to the Stirling Range in the southwest of Western Australia. A shrub up to 2 m (7 ft) tall, it has dense foliage and leaves with very prickly serrated margins. Its unusual pinkish, pendent (hanging) flower spikes, known as inflorescences, are generally hidden in the foliage and appear during the early summer. Although it was collected by the naturalist James Drummond in the 1840s, Banksia aculeata was not formally described until 1981, by Alex George in his monograph of the genus.
+A rare plant, Banksia aculeata is found in gravelly soils in elevated areas. Native to a habitat burnt by periodic bushfires, it is killed by fire and regenerates from seed afterwards. In contrast to other Western Australian banksias, it appears to have some resistance to the soil-borne water mould Phytophthora cinnamomi.</p>
         </div>
         <div id="simplified-doc" class="document">
             <h2>Simplified Document</h2>
-            <p>Banksia aculeata, also called prickly banksia, is a type of plant...</p>
+            <p>Banksia aculeata, also called prickly banksia, is a type of plant from the Proteaceae family. It naturally grows in the Stirling Range in the southwest of Western Australia. This shrub can grow up to about 2 meters (7 feet) tall. It has thick leaves with very sharp, jagged edges. It has unusual pinkish flowers that hang downwards and are generally hidden in the leaves, showing up in early summer. Even though the naturalist James Drummond collected it in the 1840s, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species.
+Banksia aculeata is a rare plant that grows in gravelly soils in high places. It lives in areas that get burned by bushfires from time to time. The plant is killed by fire, but regrows from its seeds afterwards. Unlike other banksias in Western Australia, it seems to be somewhat resistant to a soil-borne mould called Phytophthora cinnamomi.</p>
         </div>
     </div>
 
@@ -50,6 +52,8 @@
         
         <div class="span-evaluation">
             <h3>1. Span: "Proteaceae family"</h3>
+            <p><strong>Issue:</strong> The term 'Proteaceae family' may not be familiar to a general audience without a background in botany.</p>
+            <p><strong>Suggested Fix:</strong> Replace with 'a family of flowering plants known as Proteaceae.'</p>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.371527831" value="Yes" required> Yes
@@ -64,7 +68,9 @@
         </div>
 
         <div class="span-evaluation">
-            <h3>2. Span: "It naturally grows..."</h3>
+            <h3>2. Span: "It naturally grows in the Stirling Range in the southwest of Western Australia."</h3>
+            <p><strong>Issue:</strong> The phrase 'naturally grows' could be simplified for clarity.</p>
+            <p><strong>Suggested Fix:</strong> Replace with 'It grows naturally in the Stirling Range in southwest Western Australia.'</p>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.1063948710" value="Yes" required> Yes
@@ -79,7 +85,9 @@
         </div>
         
         <div class="span-evaluation">
-            <h3>3. Span: "Even though the naturalist..."</h3>
+            <h3>3. Span: "Even though the naturalist James Drummond collected it in the 1840s, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species."</h3>
+            <p><strong>Issue:</strong> This sentence is long and contains multiple pieces of information, which may be difficult to follow.</p>
+            <p><strong>Suggested Fix:</strong> Break into two sentences: 'The naturalist James Drummond collected it in the 1840s. However, Banksia aculeata was not officially described until 1981 by Alex George in his detailed study of the species.'</p>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.1057746107" value="Yes" required> Yes
@@ -94,7 +102,9 @@
         </div>
 
         <div class="span-evaluation">
-            <h3>4. Span: "It lives in areas that get burned..."</h3>
+            <h3>4. Span: "It lives in areas that get burned by bushfires from time to time."</h3>
+            <p><strong>Issue:</strong> The phrase 'from time to time' is vague and could be more direct.</p>
+            <p><strong>Suggested Fix:</strong> Replace with 'It lives in areas that are occasionally burned by bushfires.'</p>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.588599697" value="Yes" required> Yes
@@ -109,7 +119,9 @@
         </div>
 
         <div class="span-evaluation">
-            <h3>5. Span: "Unlike other banksias..."</h3>
+            <h3>5. Span: "Unlike other banksias in Western Australia, it seems to be somewhat resistant to a soil-borne mould called Phytophthora cinnamomi."</h3>
+            <p><strong>Issue:</strong> The phrase 'seems to be somewhat resistant' is indirect and could be more straightforward.</p>
+            <p><strong>Suggested Fix:</strong> Replace with 'Unlike other banksias in Western Australia, it is somewhat resistant to a soil-borne mold called Phytophthora cinnamomi.'</p>
             <div class="question-block">
                 <label>Do you agree with the issue identified?</label>
                 <input type="radio" name="entry.1742029395" value="Yes" required> Yes
@@ -178,11 +190,14 @@
                 // --- CONFIGURATION ---
                 const formActionUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSddOIJxcLnfFFEd34mOlPkzUP31S-QKWrMM94zynYY8ASDXXg/formResponse';
                 
-                // IMPORTANT: PASTE YOUR REAL PROLIFIC URL IN THE LINE BELOW
+                // ##################################################################
+                // ### IMPORTANT: PASTE YOUR REAL PROLIFIC URL IN THE LINE BELOW ###
+                // ##################################################################
                 const prolificCompletionUrl = 'PASTE_YOUR_PROLIFIC_COMPLETION_URL_HERE';
+                
                 // --- END CONFIGURATION ---
 
-                // Check if the URL was filled
+                // Safety check for the Prolific URL placeholder
                 if (prolificCompletionUrl.includes('PASTE_YOUR_PROLIFIC')) {
                     alert('ERROR: The prolificCompletionUrl has not been set in the HTML file. Please contact the researcher.');
                     submitButton.disabled = false;
@@ -190,6 +205,7 @@
                     return; // Stop the submission
                 }
 
+                // Send the data to Google Forms in the background
                 fetch(formActionUrl, {
                     method: 'POST',
                     body: new FormData(form),
