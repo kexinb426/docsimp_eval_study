@@ -200,5 +200,27 @@
     });
 </script>
 
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // 1. Look at the URL in the browser's address bar
+        const urlParams = new URLSearchParams(window.location.search);
+        
+        // 2. Find the value for the parameter named 'PROLIFIC_PID'
+        const prolificId = urlParams.get('PROLIFIC_PID');
+
+        // 3. If an ID was found in the URL...
+        if (prolificId) {
+            // 4. Find the input field on the page
+            const idInput = document.querySelector('input[name="entry.1360928916"]');
+            if (idInput) {
+                // 5. Set the value of the input field to the ID
+                idInput.value = prolificId;
+                // Optional: Make the field read-only so the user can't change it
+                idInput.readOnly = true; 
+            }
+        }
+    });
+</script>
+
 </body>
 </html>
