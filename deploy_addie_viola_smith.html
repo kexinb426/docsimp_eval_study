@@ -16,24 +16,9 @@
         .tab-button.active { font-weight: bold; color: #0056b3; border-bottom: 3px solid #0056b3; }
         .tab-content { display: none; padding: 20px; }
         .tab-content.active { display: block; }
-        .wizard-page { display: none; margin-bottom: 20px; }
-        .wizard-page.active { display: block; animation: fadeIn 0.5s; }
-        @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
-        .wizard-context-header { padding: 15px; background-color: #fff; border: 1px solid #ddd; margin-bottom: 20px; border-radius: 8px; max-height: 250px; overflow-y: auto; }
-        .wizard-nav { margin-top: 30px; padding-top: 20px; border-top: 1px solid #eee; display: flex; justify-content: space-between; align-items: center; }
-        .wizard-nav-button { padding: 10px 20px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; cursor: pointer; background-color: #fff; }
-        .question-block { margin: 25px 0; border-left: 3px solid #007bff; padding-left: 15px;}
-        .question-block label { font-weight: bold; display: block; margin-bottom: 8px; }
-        .radio-option-label { display: block; margin-bottom: 5px; }
         #submit-button-container { display: none; text-align: center; padding: 30px; }
         #submit-button { padding: 15px 25px; background-color: #28a745; color: white; border-radius: 8px; font-size: 20px; font-weight: bold; border: none; cursor: pointer; }
         #submit-button:disabled { background-color: #999; }
-        mark { background-color: #ffeb3b; padding: 2px 0; border-radius: 3px; }
-        .tooltip-container { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border: 1px solid #0056b3; border-radius: 50%; font-size: 10px; font-weight: bold; color: #0056b3; margin-left: 8px; position: relative; cursor: help; vertical-align: middle; }
-        .tooltip-text { visibility: hidden; opacity: 0; width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 8px; position: absolute; z-index: 1; bottom: 150%; left: 50%; margin-left: -125px; transition: opacity 0.3s; font-weight: normal; }
-        .tooltip-text::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #333 transparent transparent transparent; }
-        .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
-        .question-description { font-weight: normal; color: #555; margin-left: 6px; font-size: 0.9em; }
     </style>
 </head>
 <body>
@@ -42,12 +27,12 @@
     <div class="workbench-header"><h1 id="study-title">Document Simplification Evaluation</h1></div>
     <form id="evaluation-form">
         <div class="workbench-body">
-            <aside id="source-panel" class="source-panel"></aside>
+            <aside id="source-panel" class="source-panel">Loading source...</aside>
             <main class="main-panel">
-                <div id="tabs-container" class="tabs"></div>
-                <div id="content-container"></div>
-                <div id="submit-button-container">
-                    <button type="submit" id="submit-button">Submit All Evaluations</button>
+                <div id="tabs-container" class="tabs">Loading tabs...</div>
+                <div id="content-container">Please fill out all evaluations and click "Submit All Evaluations" on the final comparison tab.</div>
+                <div id="submit-button-container" style="display: block;">
+                    <button type="submit" id="submit-button">Submit (Minimal Test)</button>
                 </div>
             </main>
         </div>
@@ -405,6 +390,218 @@ const taskData = [
                 }
             ]
         }
+    },
+    {
+        "title": "Addie Viola Smith",
+        "model_id": "gemma_editor",
+        "original": "Addie Viola Smith (November 14, 1893 \u2013 December 13, 1975), also known as Shi Fanglan (Chinese: \u65bd\u82b3\u862d; pinyin: Sh\u012b F\u0101ngl\u00e1n), was an American attorney who served as the United States trade commissioner to Shanghai from 1928 to 1939. She was the first female Foreign Service officer in the United States Foreign Service to work under the United States Department of Commerce, the first woman to serve as an assistant trade commissioner, and the first woman to serve as trade commissioner.\nSmith was born and raised in Stockton, California. In 1917, she moved to Washington, D.C. While working for the United States Department of Labor, she attended the Washington College of Law part-time, earning her bachelor of laws in 1920. In October that year she joined the Foreign Service and was assigned to Beijing as a clerk in the trade commissioner's office. Smith was promoted to assistant trade commissioner in Shanghai in 1922, and appointed trade commissioner of Shanghai in 1928, a post she held until 1939. For the remainder of her career, she held several roles in the United States government, international organizations, and the United Nations.\nThroughout her life, Smith was also a member of several feminist organizations; scholars have described her international feminist activism as being rooted in imperialist and colonialist attitudes. Smith met her life partner, Eleanor Hinder, in Shanghai in 1926. They lived together until Hinder's death in 1963. Smith died on December 13, 1975, aged 82, in Mosman, New South Wales, and was cremated. She and Hinder were memorialized by their friends with two stone seats at the E.G. Waterhouse National Camellia Gardens in Caringbah.\n\n",
+        "simplified": "Addie Viola Smith, born November 14, 1893, and died December 13, 1975, was an American lawyer. She worked as the United States trade commissioner in Shanghai from 1928 to 1939. She was a very important figure because she was the first woman to hold this position within the U.S. Foreign Service, which was part of the Department of Commerce.\n\nAddie grew up in Stockton, California, and later moved to Washington, D.C. She studied law at Washington College of Law and became a clerk in the trade commissioner\u2019s office in Beijing in 1917.  She was promoted to assistant trade commissioner in Shanghai in 1922 and then became the trade commissioner of Shanghai in 1928, a role she kept until 1939. After this, she continued to work for the U.S. government, various international groups, and the United Nations.\n\nAddie was also involved in feminist movements. Some historians believe her activism was influenced by the ideas of the time regarding empires and colonies. In Shanghai in 1926, she met Eleanor Hinder, and they lived together until Eleanor died in 1963. Addie died in 1975 at the age of 82 in Australia.  Her friends created two stone benches in the E.G. Waterhouse National Camellia Gardens in her memory.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "also known as Shi Fanglan (Chinese: \u65bd\u82b3\u862d; pinyin: Sh\u012b F\u0101ngl\u00e1n)",
+                    "simplified_span": "was an American lawyer.",
+                    "explanation": "The simplified text omits Addie Viola Smith's Chinese name, Shi Fanglan, which is part of her identity and relevant to her work in China.",
+                    "suggested_fix": "Add 'also known as Shi Fanglan' after 'was an American lawyer.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "She was the first female Foreign Service officer in the United States Foreign Service to work under the United States Department of Commerce, the first woman to serve as an assistant trade commissioner, and the first woman to serve as trade commissioner.",
+                    "simplified_span": "She was a very important figure because she was the first woman to hold this position within the U.S. Foreign Service, which was part of the Department of Commerce.",
+                    "explanation": "The simplified text omits the specific achievements of Smith being the first female Foreign Service officer, the first woman assistant trade commissioner, and the first woman trade commissioner.",
+                    "suggested_fix": "Include the specific achievements: 'She was the first female Foreign Service officer in the United States Foreign Service to work under the United States Department of Commerce, the first woman to serve as an assistant trade commissioner, and the first woman to serve as trade commissioner.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "While working for the United States Department of Labor, she attended the Washington College of Law part-time, earning her bachelor of laws in 1920.",
+                    "simplified_span": "She studied law at Washington College of Law and became a clerk in the trade commissioner\u2019s office in Beijing in 1917.",
+                    "explanation": "The simplified text incorrectly suggests that Smith became a clerk in 1917 before attending law school, whereas she attended law school while working for the Department of Labor and earned her degree in 1920.",
+                    "suggested_fix": "Clarify the timeline: 'While working for the United States Department of Labor, she attended the Washington College of Law part-time, earning her bachelor of laws in 1920, and then became a clerk in the trade commissioner\u2019s office in Beijing.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "scholars have described her international feminist activism as being rooted in imperialist and colonialist attitudes.",
+                    "simplified_span": "Some historians believe her activism was influenced by the ideas of the time regarding empires and colonies.",
+                    "explanation": "The simplified text softens the critique of Smith's activism by using 'influenced by the ideas of the time' instead of 'rooted in imperialist and colonialist attitudes,' which changes the emphasis and critical tone.",
+                    "suggested_fix": "Use the original phrasing: 'Some historians have described her international feminist activism as being rooted in imperialist and colonialist attitudes.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Smith died on December 13, 1975, aged 82, in Mosman, New South Wales, and was cremated.",
+                    "simplified_span": "Addie died in 1975 at the age of 82 in Australia.",
+                    "explanation": "The simplified text omits the specific location of Smith's death, Mosman, New South Wales, and the fact that she was cremated.",
+                    "suggested_fix": "Include the specific location and cremation: 'Addie died on December 13, 1975, at the age of 82 in Mosman, New South Wales, Australia, and was cremated.'"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Addie Viola Smith, born November 14, 1893, and died December 13, 1975, was an American lawyer.",
+                    "explanation": "The sentence structure is clunky due to the placement of birth and death dates, which interrupts the flow.",
+                    "suggested_fix": "Addie Viola Smith was an American lawyer, born on November 14, 1893, and died on December 13, 1975."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "She was a very important figure because she was the first woman to hold this position within the U.S. Foreign Service, which was part of the Department of Commerce.",
+                    "explanation": "The phrase 'very important figure' is vague and does not specify why she was important.",
+                    "suggested_fix": "She was a pioneering figure as the first woman to hold this position within the U.S. Foreign Service, part of the Department of Commerce."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Addie grew up in Stockton, California, and later moved to Washington, D.C.",
+                    "explanation": "The transition between her early life and her career is abrupt, lacking a clear connection.",
+                    "suggested_fix": "Addie grew up in Stockton, California, and later moved to Washington, D.C., where she pursued her education and career."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Some historians believe her activism was influenced by the ideas of the time regarding empires and colonies.",
+                    "explanation": "The phrase 'ideas of the time regarding empires and colonies' is vague and lacks specificity.",
+                    "suggested_fix": "Some historians believe her activism was influenced by contemporary ideas about imperialism and colonialism."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Addie died in 1975 at the age of 82 in Australia.",
+                    "explanation": "The sentence structure is awkward due to the placement of age and location.",
+                    "suggested_fix": "Addie died in Australia in 1975 at the age of 82."
+                }
+            ]
+        }
     }
 ];
 const masterFormBlueprint = {
@@ -516,189 +713,62 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
     }
 
-    const sourcePanel = document.getElementById('source-panel');
-    const tabsContainer = document.getElementById('tabs-container');
-    const contentContainer = document.getElementById('content-container');
-    const submitContainer = document.getElementById('submit-button-container');
-    let prolificId = '';
-
-    function buildInterface() {
-        const urlParams = new URLSearchParams(window.location.search);
-        prolificId = urlParams.get('PROLIFIC_PID') || 'PROLIFIC_ID_NOT_FOUND';
-        
-        sourcePanel.innerHTML = `<h2>Source Document</h2><p><strong>Title:</strong> ${taskData[0].title}</p><p>${taskData[0].original.replace(/\n/g, '<br>')}</p>`;
-        
-        let tabsHTML = '<button type="button" class="tab-button active" data-tab="instructions">Instructions</button>';
-        taskData.forEach((_, i) => { tabsHTML += `<button type="button" class="tab-button" data-tab="s${i}">Version ${i + 1}</button>`; });
-        tabsHTML += '<button type="button" class="tab-button" data-tab="comparison">Final Comparison</button>';
-        tabsContainer.innerHTML = tabsHTML;
-
-        let contentHTML = `<div id="instructions" class="tab-content active"><h3>Instructions</h3><p>Please evaluate each simplification by proceeding through the tabs. Within each tab, use the 'Next' and 'Previous' buttons to move through the evaluation pages.</p></div>`;
-        taskData.forEach((simp, i) => { contentHTML += generateSimplificationTabHTML(simp, i); });
-        contentHTML += generateFinalComparisonHTML(taskData);
-        contentContainer.innerHTML = contentHTML;
-
-        initializeInteractivity();
-    }
-
-    function generateSimplificationTabHTML(simplification, simpIndex) {
-        const pages = [];
-        const escapeRegExp = (string) => string ? string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : '';
-        const createRadioOption = (name, value, labelText, tooltipText) => `<label class="radio-option-label"><input type="radio" name="${name}" value="${value}" required> ${labelText} <span class="tooltip-container">i<span class="tooltip-text">${tooltipText}</span></span></label>`;
-        
-        const overallQuestionsHTML = simplification.evaluation.overall_questions.map(q => {
-            const labelParts = q.label.split(/:(.*)/s);
-            const mainLabel = labelParts[0] + ':';
-            const description = labelParts[1] || '';
-            const optionsHTML = q.options.map(opt => createRadioOption(`s${simpIndex}_${q.key}`, opt.label, opt.label, opt.description)).join('');
-            return `<div class="question-block"><label>${mainLabel}<span class="question-description">${description}</span></label>${optionsHTML}</div>`;
-        }).join('');
-        pages.push({type: 'overall', content: `<h3>Overall Quality Questions</h3><div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div>${overallQuestionsHTML}` });
-
-        simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
-            const highlightedSimplified = issue.simplified_span ? simplification.simplified.replace(new RegExp(escapeRegExp(issue.simplified_span), 'g'), `<mark>${issue.simplified_span}</mark>`) : simplification.simplified;
-            let contextHTML = `<div class="context-sub-header"></div><p>${highlightedSimplified.replace(/\n/g, '<br>')}</p>`;
-            const severityOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_severity`, "Major", "Major Issue", "Significantly harms comprehension or quality.") + createRadioOption(`s${simpIndex}_span${issueIndex}_severity`, "Minor", "Minor Issue", "Small issue that could be improved.") + createRadioOption(`s${simpIndex}_span${issueIndex}_severity`, "Not an issue", "No Issue", "The text is acceptable as is.");
-            const explanationOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Correct", "Correct", "Identifies and describes the main issue.") + createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Partially Correct", "Partially Correct", "Identifies a real issue, but the explanation is incomplete or inaccurate.") + createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Incorrect", "Incorrect", "Describes a problem that doesn't actually exist.");
-            const fixOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Solves the issue", "Solves", "This is a clear and successful improvement.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Partial improvement", "Partial", "The fix is slightly better, but the text could still be improved.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "No difference", "No Difference", "The fix is neither better nor worse than the original text.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Worse", "Worse", "The suggested fix is actually a regression.");
-            pages.push({type: issue.type, originalSpan: issue.original_span, content: `<h3>Span Evaluation (${issueIndex + 1}/${simplification.evaluation.simplicity_issues.length})</h3><div class="wizard-context-header">${contextHTML}</div><div class="question-block"><p><strong>Explanation:</strong> ${issue.explanation}</p><p><strong>Suggested Fix:</strong> <span style="color:#28a745;">${issue.suggested_fix}</span></p></div><div class="question-block"><label>How would you rate this issue?</label>${severityOptions}</div><div class="question-block"><label>How accurate is the LLM's explanation?</label>${explanationOptions}</div><div class="question-block"><label>Is the suggested fix an improvement?</label>${fixOptions}</div>`});
-        });
-        
-        pages.push({
-            type: 'feedback',
-            content: `<h3>Additional Feedback</h3>
-                    <div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div>
-                    <div class="question-block">
-                        <label>Did you notice any other issues while reading that were not highlighted? If so, please paste relevant spans here or describe them below.</label>
-                        <textarea name="s${simpIndex}_missed_issues_text" class="missed-issues-textarea" data-simp-index="${simpIndex}" rows="5" style="width: 95%; padding: 5px;"></textarea>
-                        <div style="margin-top: 10px;"><label><input type="checkbox" name="s${simpIndex}_missed_issues_none" class="missed-issues-none-checkbox" data-simp-index="${simpIndex}" value="None"> I did not notice any other issues.</label></div>
-                    </div>`
-        });
-        const wizardPagesHTML = pages.map((page, pageIndex) => `<div class="wizard-page" data-page-index="${pageIndex}" data-issue-type="${page.type}" data-original-span="${page.originalSpan || ''}">${page.content}<div class="wizard-nav"><button type="button" class="wizard-nav-button prev" style="visibility: ${pageIndex > 0 ? 'visible' : 'hidden'};">&laquo; Previous</button><span>Page ${pageIndex + 1} of ${pages.length}</span><button type="button" class="wizard-nav-button next" style="visibility: ${pageIndex < pages.length - 1 ? 'visible' : 'hidden'};">Next &raquo;</button></div></div>`).join('');
-        return `<div id="s${simpIndex}" class="tab-content wizard-container">${wizardPagesHTML}</div>`;
-    }
+    const urlParams = new URLSearchParams(window.location.search);
+    const prolificId = urlParams.get('PROLIFIC_PID') || 'PROLIFIC_ID_NOT_FOUND';
     
-    function generateFinalComparisonHTML(data) {
-        let optionsHTML = data.map((task, i) => `<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="${task.model_id}" required> Version ${i+1}</label>`).join('');
-        return `<div id="comparison" class="tab-content"><h3>Final Comparison</h3><div class="question-block"><label>Which simplification was the best overall?</label>${optionsHTML}<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="All Equal" required> All were about equal</label></div></div>`;
-    }
+    // --- MINIMAL TEST SUBMISSION LOGIC ---
+    document.getElementById('evaluation-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const submitButton = document.getElementById('submit-button');
+        submitButton.disabled = true;
+        submitButton.textContent = 'Submitting Test...';
 
-    function initializeInteractivity() {
-        // Tab switching logic
-        tabsContainer.addEventListener('click', (e) => {
-            if (e.target.matches('.tab-button')) {
-                const tabId = e.target.dataset.tab;
-                if(tabsContainer.querySelector('.active')) tabsContainer.querySelector('.active').classList.remove('active');
-                if(contentContainer.querySelector('.tab-content.active')) contentContainer.querySelector('.tab-content.active').classList.remove('active');
-                e.target.classList.add('active');
-                const newTabContent = contentContainer.querySelector(`#${tabId}`);
-                if (newTabContent) newTabContent.classList.add('active');
-                submitContainer.style.display = (tabId === 'comparison') ? 'block' : 'none';
-            }
-        });
+        console.log("--- MINIMAL SUBMISSION TEST INITIATED ---");
+        alert("Running a minimal test. We will only try to submit your Prolific ID.");
 
-        // Wizard navigation logic
-        contentContainer.addEventListener('click', (e) => {
-            if (e.target.matches('.wizard-nav-button')) {
-                const wizardContainer = e.target.closest('.wizard-container');
-                const currentPage = e.target.closest('.wizard-page');
-                let currentPageIndex = parseInt(currentPage.dataset.pageIndex, 10);
-                currentPageIndex += e.target.matches('.next') ? 1 : -1;
-                currentPage.classList.remove('active');
-                wizardContainer.querySelector(`.wizard-page[data-page-index="${currentPageIndex}"]`).classList.add('active');
-            }
-        });
-        
-        // Show first page of each wizard
-        document.querySelectorAll('.wizard-container').forEach(container => container.querySelector('.wizard-page')?.classList.add('active'));
-        
-        // --- FINAL SUBMISSION LOGIC (HIDDEN IFRAME METHOD) ---
-        document.getElementById('evaluation-form').addEventListener('submit', function(e) {
-            e.preventDefault();
-            const submitButton = document.getElementById('submit-button');
-            submitButton.disabled = true;
-            submitButton.textContent = 'Submitting... Please Wait';
-
-            try {
-                // Create a single hidden iframe to handle all submissions
-                const iframe = document.createElement('iframe');
-                iframe.name = 'hidden-submission-iframe';
-                iframe.style.display = 'none';
-                document.body.appendChild(iframe);
-
-                const { formResponseUrl, prolificCompletionUrl, entry_ids: entryIds } = masterFormBlueprint;
-                const allFormData = new FormData(document.getElementById('evaluation-form'));
-                
-                // Function to submit a single task's data via a hidden form
-                const submitTaskData = (simplification, simpIndex) => {
-                    const dataToSubmit = {};
-                    
-                    dataToSubmit[entryIds.prolific_id] = prolificId;
-                    dataToSubmit[entryIds.document_title] = simplification.title;
-                    dataToSubmit[entryIds.simplification_model_id] = simplification.model_id;
-
-                    simplification.evaluation.overall_questions.forEach(q => {
-                        const entryKey = (q.key === 'overall_impression') ? 'overall_quality' : q.key;
-                        dataToSubmit[entryIds[entryKey]] = allFormData.get(`s${simpIndex}_${q.key}`) || '';
-                    });
-
-                    simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
-                        const spanNum = issueIndex + 1;
-                        if (entryIds[`span_${spanNum}_text_id`]) {
-                            dataToSubmit[entryIds[`span_${spanNum}_text_id`]] = issue.simplified_span || 'SPAN_NOT_FOUND';
-                        }
-                        dataToSubmit[entryIds[`span_${spanNum}_severity_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '';
-                        dataToSubmit[entryIds[`span_${spanNum}_explanation_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '';
-                        dataToSubmit[entryIds[`span_${spanNum}_fix_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '';
-                    });
-
-                    const missedIssuesText = allFormData.get(`s${simpIndex}_missed_issues_text`);
-                    const isNoneChecked = allFormData.get(`s${simpIndex}_missed_issues_none`);
-                    dataToSubmit[entryIds.missed_issues_text] = isNoneChecked ? 'None' : missedIssuesText || '';
-                    dataToSubmit[entryIds.missed_issues_none] = isNoneChecked ? 'Checked' : '';
-                    
-                    if (simpIndex === taskData.length - 1) {
-                        if (entryIds.final_comparison_choice) {
-                            dataToSubmit[entryIds.final_comparison_choice] = allFormData.get('final_choice') || '';
-                        }
-                    }
-
-                    const form = document.createElement('form');
-                    form.action = formResponseUrl;
-                    form.method = 'POST';
-                    form.target = iframe.name;
-
-                    for (const key in dataToSubmit) {
-                        const input = document.createElement('input');
-                        input.type = 'hidden';
-                        input.name = key;
-                        input.value = dataToSubmit[key];
-                        form.appendChild(input);
-                    }
-
-                    document.body.appendChild(form);
-                    form.submit();
-                    document.body.removeChild(form);
-                };
-
-                // Submit data for each task
-                taskData.forEach(submitTaskData);
-
-                // Redirect after a delay
-                setTimeout(() => {
-                    window.location.href = prolificCompletionUrl;
-                }, 2500);
+        try {
+            const { formResponseUrl, prolificCompletionUrl, entry_ids: entryIds } = masterFormBlueprint;
             
-            } catch (error) {
-                console.error("A critical error occurred during submission:", error);
-                alert("A critical error occurred while submitting data. Please contact the researcher.");
-                submitButton.disabled = false;
-                submitButton.textContent = 'Submit All Evaluations';
-            }
-        });
-    }
+            // 1. Create the hidden iframe
+            const iframe = document.createElement('iframe');
+            iframe.name = 'hidden-submission-iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+            
+            // 2. Create the form
+            const form = document.createElement('form');
+            form.action = formResponseUrl;
+            form.method = 'POST';
+            form.target = iframe.name; // Target the hidden iframe
 
-    buildInterface();
+            // 3. Create ONLY ONE input for the Prolific ID
+            const input = document.createElement('input');
+            input.type = 'hidden';
+            input.name = entryIds.prolific_id;
+            input.value = prolificId;
+            form.appendChild(input);
+
+            // 4. Submit the form
+            document.body.appendChild(form);
+            form.submit();
+            document.body.removeChild(form); // Clean up the form element
+            
+            console.log(`Test submission sent for Prolific ID: ${prolificId}. Check the Google Sheet now. The page will redirect in 5 seconds.`);
+            alert(`Test submission has been sent for Prolific ID: ${prolificId}. Please check the Google Sheet to see if a new row with this ID appeared. The page will redirect in 5 seconds.`);
+
+        } catch (error) {
+            console.error("The minimal test failed with an error:", error);
+            alert("The minimal test itself failed with an error. Please copy the error from the console (F12) and contact the researcher. Error: " + error.message);
+            submitButton.disabled = false;
+            submitButton.textContent = 'Submit (Minimal Test)';
+            return; 
+        }
+
+        // 5. Redirect after a delay
+        setTimeout(() => {
+            window.location.href = prolificCompletionUrl;
+        }, 5000);
+    });
 });
 </script>
 
