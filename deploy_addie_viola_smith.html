@@ -24,11 +24,11 @@
         .wizard-nav-button { padding: 10px 20px; font-size: 16px; border-radius: 5px; border: 1px solid #ccc; cursor: pointer; background-color: #fff; }
         .question-block { margin: 25px 0; border-left: 3px solid #007bff; padding-left: 15px;}
         .question-block label { font-weight: bold; display: block; margin-bottom: 8px; }
-        .question-block p { margin: 5px 0; }
+        .radio-option-label { display: block; margin-bottom: 5px; }
         #submit-button-container { display: none; text-align: center; padding: 30px; }
         #submit-button { padding: 15px 25px; background-color: #28a745; color: white; border-radius: 8px; font-size: 20px; font-weight: bold; border: none; cursor: pointer; }
+        #submit-button:disabled { background-color: #999; }
         mark { background-color: #ffeb3b; padding: 2px 0; border-radius: 3px; }
-        .radio-option-label { display: block; margin-bottom: 5px; }
         .tooltip-container { display: inline-flex; align-items: center; justify-content: center; width: 16px; height: 16px; border: 1px solid #0056b3; border-radius: 50%; font-size: 10px; font-weight: bold; color: #0056b3; margin-left: 8px; position: relative; cursor: help; vertical-align: middle; }
         .tooltip-text { visibility: hidden; opacity: 0; width: 250px; background-color: #333; color: #fff; text-align: center; border-radius: 6px; padding: 8px; position: absolute; z-index: 1; bottom: 150%; left: 50%; margin-left: -125px; transition: opacity 0.3s; font-weight: normal; }
         .tooltip-text::after { content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px; border-width: 5px; border-style: solid; border-color: #333 transparent transparent transparent; }
@@ -55,10 +55,8 @@
 </div>
 
 <script>
-// This is the single, unified script block that contains all logic.
-
 // =======================================================================
-// === DATA INJECTION POINT (To be replaced by your Python script) ===
+// === DATA INJECTION POINT (These will be replaced by Python) ===
 // =======================================================================
 const taskData = [
     {
@@ -724,9 +722,8 @@ const masterFormBlueprint = {
 
 document.addEventListener('DOMContentLoaded', function() {
     
-    // Check if data was injected correctly
     if (typeof taskData === 'string' || typeof masterFormBlueprint === 'string') {
-        document.body.innerHTML = '<h1>Error: Data not injected into template. Please run the Python script.</h1>';
+        document.body.innerHTML = '<h1>Error: Data not injected into template. Please run the Python script to generate a survey file.</h1>';
         return;
     }
 
@@ -734,19 +731,22 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabsContainer = document.getElementById('tabs-container');
     const contentContainer = document.getElementById('content-container');
     const submitContainer = document.getElementById('submit-button-container');
-    let originalSourceHTML = ''; 
+    let originalSourceHTML = '';
+    let prolificId = '';
 
-    // --- MAIN BUILDER FUNCTION ---
     function buildInterface() {
+        const urlParams = new URLSearchParams(window.location.search);
+        prolificId = urlParams.get('PROLIFIC_PID') || 'PROLIFIC_ID_NOT_FOUND';
+        
         originalSourceHTML = `<h2>Source Document</h2><p><strong>Title:</strong> ${taskData[0].title}</p><p>${taskData[0].original.replace(/\n/g, '<br>')}</p>`;
         sourcePanel.innerHTML = originalSourceHTML;
         
         let tabsHTML = '<button type="button" class="tab-button active" data-tab="instructions">Instructions</button>';
-        taskData.forEach((_, i) => { tabsHTML += `<button type="button" class="tab-button" data-tab="s${i}">Simplification ${i + 1}</button>`; });
+        taskData.forEach((_, i) => { tabsHTML += `<button type="button" class="tab-button" data-tab="s${i}">Version ${i + 1}</button>`; });
         tabsHTML += '<button type="button" class="tab-button" data-tab="comparison">Final Comparison</button>';
         tabsContainer.innerHTML = tabsHTML;
 
-        let contentHTML = `<div id="instructions" class="tab-content active"><h3>Instructions</h3><p>Proceed through the tabs. Within each simplification tab, use the 'Next' and 'Previous' buttons to navigate the evaluation steps.</p></div>`;
+        let contentHTML = `<div id="instructions" class="tab-content active"><h3>Instructions</h3><p>Please evaluate each simplification by proceeding through the tabs. Within each tab, use the 'Next' and 'Previous' buttons to move through the evaluation pages.</p></div>`;
         taskData.forEach((simp, i) => { contentHTML += generateSimplificationTabHTML(simp, i); });
         contentHTML += generateFinalComparisonHTML(taskData);
         contentContainer.innerHTML = contentHTML;
@@ -754,18 +754,11 @@ document.addEventListener('DOMContentLoaded', function() {
         initializeInteractivity();
     }
 
-    // --- HTML GENERATION HELPERS ---
     function generateSimplificationTabHTML(simplification, simpIndex) {
         const pages = [];
         const escapeRegExp = (string) => string ? string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : '';
-
-        const createRadioOption = (name, value, labelText, tooltipText) => `
-            <label class="radio-option-label">
-                <input type="radio" name="${name}" value="${value}" required>
-                ${labelText}
-                <span class="tooltip-container">i<span class="tooltip-text">${tooltipText}</span></span>
-            </label>`;
-
+        const createRadioOption = (name, value, labelText, tooltipText) => `<label class="radio-option-label"><input type="radio" name="${name}" value="${value}" required> ${labelText} <span class="tooltip-container">i<span class="tooltip-text">${tooltipText}</span></span></label>`;
+        
         const overallQuestionsHTML = simplification.evaluation.overall_questions.map(q => {
             const labelParts = q.label.split(/:(.*)/s);
             const mainLabel = labelParts[0] + ':';
@@ -773,101 +766,110 @@ document.addEventListener('DOMContentLoaded', function() {
             const optionsHTML = q.options.map(opt => createRadioOption(`s${simpIndex}_${q.key}`, opt.label, opt.label, opt.description)).join('');
             return `<div class="question-block"><label>${mainLabel}<span class="question-description">${description}</span></label>${optionsHTML}</div>`;
         }).join('');
-        pages.push({ type: 'overall', content: `<h3>Overall Quality Questions</h3><div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div>${overallQuestionsHTML}` });
+        pages.push({type: 'overall', content: `<h3>Overall Quality Questions</h3><div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div>${overallQuestionsHTML}` });
 
         simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
             const highlightedSimplified = issue.simplified_span ? simplification.simplified.replace(new RegExp(escapeRegExp(issue.simplified_span), 'g'), `<mark>${issue.simplified_span}</mark>`) : simplification.simplified;
             let contextHTML = `<div class="context-sub-header"></div><p>${highlightedSimplified.replace(/\n/g, '<br>')}</p>`;
-
             const severityOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_severity`, "Major", "Major Issue", "Significantly harms comprehension or quality.") + createRadioOption(`s${simpIndex}_span${issueIndex}_severity`, "Minor", "Minor Issue", "Small issue that could be improved.") + createRadioOption(`s${simpIndex}_span${issueIndex}_severity`, "Not an issue", "No Issue", "The text is acceptable as is.");
-            const explanationOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Correct", "Correct", "Identifies and describes the main issue.") + createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Partially Correct", "Partially Correct", "Identifies a real issue, but the explanation is incomplete or inaccurate.") + createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Incorrect", "Incorrect or Irrelevant", "Describes a problem that doesn't actually exist.");
-            const fixOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Solves the issue", "Solves the issue", "This is a clear and successful improvement.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Partial improvement", "Partial improvement", "The fix is slightly better.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "No difference", "No difference", "The fix is neither better nor worse.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Worse", "Worse", "The suggested fix is a regression.");
-            
-            pages.push({
-                type: issue.type,
-                originalSpan: issue.original_span,
-                content: `<h3>Span Evaluation (${issueIndex + 1}/${simplification.evaluation.simplicity_issues.length})</h3>
-                          <div class="wizard-context-header">${contextHTML}</div>
-                          <div class="question-block"><p><strong>Explanation:</strong> ${issue.explanation}</p><p><strong>Suggested Fix:</strong> <span style="color:#28a745;">${issue.suggested_fix}</span></p></div>
-                          <div class="question-block"><label>How would you rate this issue? It contains:</label>${severityOptions}</div>
-                          <div class="question-block"><label>How accurate is the LLM's explanation?</label>${explanationOptions}</div>
-                          <div class="question-block"><label>Is the suggested fix an improvement?</label>${fixOptions}</div>`
-            });
+            const explanationOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Correct", "Correct", "Identifies and describes the main issue.") + createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Partially Correct", "Partially Correct", "Identifies a real issue, but the explanation is incomplete or inaccurate.") + createRadioOption(`s${simpIndex}_span${issueIndex}_explanation`, "Incorrect", "Incorrect", "Describes a problem that doesn't actually exist.");
+            const fixOptions = createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Solves the issue", "Solves", "This is a clear and successful improvement.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Partial improvement", "Partial", "The fix is slightly better, but the text could still be improved.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "No difference", "No Difference", "The fix is neither better nor worse than the original text.") + createRadioOption(`s${simpIndex}_span${issueIndex}_fix`, "Worse", "Worse", "The suggested fix is actually a regression.");
+            pages.push({type: issue.type, originalSpan: issue.original_span, content: `<h3>Span Evaluation (${issueIndex + 1}/${simplification.evaluation.simplicity_issues.length})</h3><div class="wizard-context-header">${contextHTML}</div><div class="question-block"><p><strong>Explanation:</strong> ${issue.explanation}</p><p><strong>Suggested Fix:</strong> <span style="color:#28a745;">${issue.suggested_fix}</span></p></div><div class="question-block"><label>How would you rate this issue?</label>${severityOptions}</div><div class="question-block"><label>How accurate is the LLM's explanation?</label>${explanationOptions}</div><div class="question-block"><label>Is the suggested fix an improvement?</label>${fixOptions}</div>`});
         });
         
-        pages.push({ type: 'feedback', content: `<h3>Additional Feedback</h3><div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div><div class="question-block"><label>Did you notice any other issues that were not highlighted?</label><textarea name="s${simpIndex}_missed_issues_text" rows="5" style="width: 95%; padding: 5px;"></textarea></div>` });
-
-        const wizardPagesHTML = pages.map((page, pageIndex) => `
-            <div class="wizard-page" data-page-index="${pageIndex}" data-issue-type="${page.type}" data-original-span="${page.originalSpan || ''}">
-                ${page.content}
-                <div class="wizard-nav">
-                    <button type="button" class="wizard-nav-button prev" style="visibility: ${pageIndex > 0 ? 'visible' : 'hidden'};">&laquo; Previous</button>
-                    <span>Page ${pageIndex + 1} of ${pages.length}</span>
-                    <button type="button" class="wizard-nav-button next" style="visibility: ${pageIndex < pages.length - 1 ? 'visible' : 'hidden'};">Next &raquo;</button>
-                </div>
-            </div>`).join('');
-        return `<div id="s${simpIndex}" class="tab-content wizard-container">${wizardPagesHTML}</div>`;
-    }
+        pages.push({
+                type: 'feedback',
+                content: `<h3>Additional Feedback</h3>
+                        <div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div>
+                        <div class="question-block">
+                            <label>Did you notice any other issues while reading that were not highlighted? If so, please paste relevant spans here or describe them below.</label>
+                            <textarea name="s${simpIndex}_missed_issues_text" class="missed-issues-textarea" data-simp-index="${simpIndex}" rows="5" style="width: 95%; padding: 5px;"></textarea>
+                            <div style="margin-top: 10px;"><label><input type="checkbox" name="s${simpIndex}_missed_issues_none" class="missed-issues-none-checkbox" data-simp-index="${simpIndex}" value="None"> I did not notice any other issues.</label></div>
+                        </div>`
+            });
+            const wizardPagesHTML = pages.map((page, pageIndex) => `<div class="wizard-page" data-page-index="${pageIndex}" data-issue-type="${page.type}" data-original-span="${page.originalSpan || ''}">${page.content}<div class="wizard-nav"><button type="button" class="wizard-nav-button prev" style="visibility: ${pageIndex > 0 ? 'visible' : 'hidden'};">&laquo; Previous</button><span>Page ${pageIndex + 1} of ${pages.length}</span><button type="button" class="wizard-nav-button next" style="visibility: ${pageIndex < pages.length - 1 ? 'visible' : 'hidden'};">Next &raquo;</button></div></div>`).join('');
+            return `<div id="s${simpIndex}" class="tab-content wizard-container">${wizardPagesHTML}</div>`;
+        }
     
     function generateFinalComparisonHTML(data) {
-        let optionsHTML = data.map((task, i) => `<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="${task.model_id}" required> Version ${i+1} (${task.model_id})</label>`).join('');
-        return `<div id="comparison" class="tab-content"><h3>Final Comparison</h3><div class="question-block"><label>Having reviewed all versions, which simplification was the best overall?</label>${optionsHTML}<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="All Equal" required> All were about equal</label></div></div>`;
+        let optionsHTML = data.map((task, i) => `<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="${task.model_id}" required> Version ${i+1}</label>`).join('');
+        return `<div id="comparison" class="tab-content"><h3>Final Comparison</h3><div class="question-block"><label>Which simplification was the best overall?</label>${optionsHTML}<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="All Equal" required> All were about equal</label></div></div>`;
     }
 
-    // --- INTERACTIVITY LOGIC ---
     function initializeInteractivity() {
-        const mainPanel = document.getElementById('content-container');
-        
-        const updateSourcePanelHighlight = (pageElement) => {
-            sourcePanel.innerHTML = originalSourceHTML;
-            if (!pageElement) return;
-            const originalSpan = pageElement.dataset.originalSpan;
-            if (pageElement.dataset.issueType === 'meaning' && originalSpan && originalSpan !== 'null') {
-                const escapedSpan = originalSpan.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-                sourcePanel.innerHTML = originalSourceHTML.replace(new RegExp(escapedSpan, 'g'), `<mark>${originalSpan}</mark>`);
-            }
-        };
-
         tabsContainer.addEventListener('click', (e) => {
             if (e.target.matches('.tab-button')) {
                 const tabId = e.target.dataset.tab;
                 if(tabsContainer.querySelector('.active')) tabsContainer.querySelector('.active').classList.remove('active');
-                if(mainPanel.querySelector('.tab-content.active')) mainPanel.querySelector('.tab-content.active').classList.remove('active');
+                if(contentContainer.querySelector('.tab-content.active')) contentContainer.querySelector('.tab-content.active').classList.remove('active');
                 e.target.classList.add('active');
-                const newTabContent = mainPanel.querySelector(`#${tabId}`);
+                const newTabContent = contentContainer.querySelector(`#${tabId}`);
                 if (newTabContent) newTabContent.classList.add('active');
                 submitContainer.style.display = (tabId === 'comparison') ? 'block' : 'none';
-                updateSourcePanelHighlight(newTabContent?.querySelector('.wizard-page.active'));
             }
         });
-        
-        mainPanel.addEventListener('click', (e) => {
+
+        contentContainer.addEventListener('click', (e) => {
             if (e.target.matches('.wizard-nav-button')) {
                 const wizardContainer = e.target.closest('.wizard-container');
                 const currentPage = e.target.closest('.wizard-page');
                 let currentPageIndex = parseInt(currentPage.dataset.pageIndex, 10);
                 currentPageIndex += e.target.matches('.next') ? 1 : -1;
                 currentPage.classList.remove('active');
-                const newPage = wizardContainer.querySelector(`.wizard-page[data-page-index="${currentPageIndex}"]`);
-                if (newPage) {
-                    newPage.classList.add('active');
-                    updateSourcePanelHighlight(newPage);
-                }
+                wizardContainer.querySelector(`.wizard-page[data-page-index="${currentPageIndex}"]`).classList.add('active');
             }
         });
-
-        document.querySelectorAll('.wizard-container').forEach(container => {
-            const firstPage = container.querySelector('.wizard-page');
-            if (firstPage) firstPage.classList.add('active');
-        });
         
-        document.getElementById('evaluation-form').addEventListener('submit', e => {
+        document.querySelectorAll('.wizard-container').forEach(container => container.querySelector('.wizard-page')?.classList.add('active'));
+        
+        // --- FINAL SUBMISSION LOGIC ---
+        document.getElementById('evaluation-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            alert("Prototype Submission!");
+            const submitButton = document.getElementById('submit-button');
+            submitButton.disabled = true;
+            submitButton.textContent = 'Submitting... Please Wait';
+
+            const { formResponseUrl, prolificCompletionUrl, entryIds } = masterFormBlueprint;
+            const allFormData = new FormData(document.getElementById('evaluation-form'));
+            const submissionPromises = [];
+
+            taskData.forEach((simplification, simpIndex) => {
+                const singleTaskFormData = new FormData();
+                singleTaskFormData.append(entryIds.prolific_id, prolificId);
+                singleTaskFormData.append(entryIds.document_title, simplification.title);
+                singleTaskFormData.append(entryIds.model_id, simplification.model_id);
+
+                simplification.evaluation.overall_questions.forEach(q => {
+                    singleTaskFormData.append(entryIds[q.key], allFormData.get(`s${simpIndex}_${q.key}`) || '');
+                });
+
+                simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
+                    const spanNum = issueIndex + 1;
+                    singleTaskFormData.append(entryIds[`span_${spanNum}_severity`], allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '');
+                    singleTaskFormData.append(entryIds[`span_${spanNum}_explanation_ok`], allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '');
+                    singleTaskFormData.append(entryIds[`span_${spanNum}_fix_ok`], allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '');
+                });
+
+                singleTaskFormData.append(entryIds.missed_issues, allFormData.get(`s${simpIndex}_missed_issues_text`) || 'None');
+                
+                const promise = fetch(formResponseUrl, { method: 'POST', body: singleTaskFormData, mode: 'no-cors' });
+                submissionPromises.push(promise);
+});
+
+            Promise.all(submissionPromises)
+                .then(() => {
+                    console.log('All submissions successful. Redirecting to Prolific.');
+                    window.location.href = prolificCompletionUrl;
+                })
+                .catch(error => {
+                    console.error('Submission Error:', error);
+                    alert('A critical error occurred. Please contact the researcher.');
+                    submitButton.disabled = false;
+                    submitButton.textContent = 'Submit All Evaluations';
+                });
         });
     }
 
-    // --- RUN EVERYTHING ---
     buildInterface();
 });
 </script>
