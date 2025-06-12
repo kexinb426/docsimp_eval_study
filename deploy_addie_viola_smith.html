@@ -537,6 +537,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         let contentHTML = `<div id="instructions" class="tab-content active"><h3>Instructions</h3><p>Please evaluate each simplification by proceeding through the tabs. Within each tab, use the 'Next' and 'Previous' buttons to move through the evaluation pages.</p></div>`;
         taskData.forEach((simp, i) => { contentHTML += generateSimplificationTabHTML(simp, i); });
+        // CORRECTED THIS LINE:
         contentHTML += generateFinalComparisonHTML(taskData);
         contentContainer.innerHTML = contentHTML;
 
@@ -585,6 +586,7 @@ document.addEventListener('DOMContentLoaded', function() {
         return `<div id="comparison" class="tab-content"><h3>Final Comparison</h3><div class="question-block"><label>Which simplification was the best overall?</label>${optionsHTML}<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="All Equal" required> All were about equal</label></div></div>`;
     }
 
+    // --- INTERACTIVITY AND SUBMISSION ---
     function initializeInteractivity() {
         // Tab switching logic
         tabsContainer.addEventListener('click', (e) => {
@@ -614,14 +616,14 @@ document.addEventListener('DOMContentLoaded', function() {
         // Show first page of each wizard
         document.querySelectorAll('.wizard-container').forEach(container => container.querySelector('.wizard-page')?.classList.add('active'));
         
-        // --- FINAL SUBMISSION LOGIC ---
+        // --- FINAL, ROBUST SUBMISSION LOGIC ---
         document.getElementById('evaluation-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const submitButton = document.getElementById('submit-button');
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting... Please Wait';
 
-            // Create a single hidden iframe to handle all submissions
+            // Create a single hidden iframe to handle all submissions without changing the page
             const iframe = document.createElement('iframe');
             iframe.name = 'hidden-submission-iframe';
             iframe.style.display = 'none';
@@ -630,80 +632,86 @@ document.addEventListener('DOMContentLoaded', function() {
             const { formResponseUrl, prolificCompletionUrl, entry_ids: entryIds } = masterFormBlueprint;
             const allFormData = new FormData(document.getElementById('evaluation-form'));
             
-            // Function to submit a single task's data via a hidden form
+            // This function creates and submits a hidden form targeting the iframe
             const submitTaskData = (simplification, simpIndex) => {
-                const dataToSubmit = {};
-                
-                // Collect metadata
-                dataToSubmit[entryIds.prolific_id] = prolificId;
-                dataToSubmit[entryIds.document_title] = simplification.title;
-                dataToSubmit[entryIds.simplification_model_id] = simplification.model_id;
+                try {
+                    const dataToSubmit = {};
+                    
+                    // Collect metadata
+                    dataToSubmit[entryIds.prolific_id] = prolificId;
+                    dataToSubmit[entryIds.document_title] = simplification.title;
+                    dataToSubmit[entryIds.simplification_model_id] = simplification.model_id;
 
-                // Collect overall quality questions
-                simplification.evaluation.overall_questions.forEach(q => {
-                    const entryKey = (q.key === 'overall_impression') ? 'overall_quality' : q.key;
-                    dataToSubmit[entryIds[entryKey]] = allFormData.get(`s${simpIndex}_${q.key}`) || '';
-                });
+                    // Collect overall quality questions
+                    simplification.evaluation.overall_questions.forEach(q => {
+                        const entryKey = (q.key === 'overall_impression') ? 'overall_quality' : q.key;
+                        dataToSubmit[entryIds[entryKey]] = allFormData.get(`s${simpIndex}_${q.key}`) || '';
+                    });
 
-                // Collect simplicity issue evaluations
-                simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
-                    const spanNum = issueIndex + 1;
-                    if (entryIds[`span_${spanNum}_text_id`]) {
-                        dataToSubmit[entryIds[`span_${spanNum}_text_id`]] = issue.simplified_span || 'SPAN_NOT_FOUND';
+                    // Collect simplicity issue evaluations
+                    simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
+                        const spanNum = issueIndex + 1;
+                        if (entryIds[`span_${spanNum}_text_id`]) {
+                            dataToSubmit[entryIds[`span_${spanNum}_text_id`]] = issue.simplified_span || 'SPAN_NOT_FOUND';
+                        }
+                        dataToSubmit[entryIds[`span_${spanNum}_severity_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '';
+                        dataToSubmit[entryIds[`span_${spanNum}_explanation_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '';
+                        dataToSubmit[entryIds[`span_${spanNum}_fix_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '';
+                    });
+
+                    // Collect additional feedback
+                    const missedIssuesText = allFormData.get(`s${simpIndex}_missed_issues_text`);
+                    const isNoneChecked = allFormData.get(`s${simpIndex}_missed_issues_none`);
+                    dataToSubmit[entryIds.missed_issues_text] = isNoneChecked ? 'None' : missedIssuesText || '';
+                    dataToSubmit[entryIds.missed_issues_none] = isNoneChecked ? 'Checked' : '';
+                    
+                    // Add Final Comparison choice to the LAST submission
+                    if (simpIndex === taskData.length - 1) {
+                        if (entryIds.final_comparison_choice) {
+                            dataToSubmit[entryIds.final_comparison_choice] = allFormData.get('final_choice') || '';
+                        }
                     }
-                    dataToSubmit[entryIds[`span_${spanNum}_severity_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '';
-                    dataToSubmit[entryIds[`span_${spanNum}_explanation_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '';
-                    dataToSubmit[entryIds[`span_${spanNum}_fix_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '';
-                });
 
-                // Collect additional feedback
-                const missedIssuesText = allFormData.get(`s${simpIndex}_missed_issues_text`);
-                const isNoneChecked = allFormData.get(`s${simpIndex}_missed_issues_none`);
-                dataToSubmit[entryIds.missed_issues_text] = isNoneChecked ? 'None' : missedIssuesText || '';
-                dataToSubmit[entryIds.missed_issues_none] = isNoneChecked ? 'Checked' : '';
-                
-                // Add Final Comparison choice to the LAST submission
-                if (simpIndex === taskData.length - 1) {
-                    if (entryIds.final_comparison_choice) {
-                        dataToSubmit[entryIds.final_comparison_choice] = allFormData.get('final_choice') || '';
+                    // Create and submit the hidden form
+                    const form = document.createElement('form');
+                    form.action = formResponseUrl;
+                    form.method = 'POST';
+                    form.target = iframe.name; // Target the hidden iframe
+
+                    for (const key in dataToSubmit) {
+                        const input = document.createElement('input');
+                        input.type = 'hidden';
+                        input.name = key;
+                        input.value = dataToSubmit[key];
+                        form.appendChild(input);
                     }
+
+                    document.body.appendChild(form);
+                    form.submit();
+                    document.body.removeChild(form);
+
+                } catch (error) {
+                    console.error(`Error processing data for task ${simpIndex}:`, error);
+                    // If one task fails, we should probably stop the whole process
+                    throw new Error(`Failed to process data for task ${simpIndex}.`);
                 }
-
-                // Create and submit the hidden form
-                const form = document.createElement('form');
-                form.action = formResponseUrl;
-                form.method = 'POST';
-                form.target = iframe.name;
-
-                for (const key in dataToSubmit) {
-                    const input = document.createElement('input');
-                    input.type = 'hidden';
-                    input.name = key;
-                    input.value = dataToSubmit[key];
-                    form.appendChild(input);
-                }
-
-                document.body.appendChild(form);
-                form.submit();
-                document.body.removeChild(form);
             };
 
-            // Submit data for each task
             try {
+                // Submit data for each task
                 taskData.forEach(submitTaskData);
+
+                // Redirect after a delay to allow forms to submit
+                setTimeout(() => {
+                    window.location.href = prolificCompletionUrl;
+                }, 2500); // 2.5-second delay for safety
+            
             } catch (error) {
-                console.error("Error during submission loop:", error);
+                // This will catch an error from the submission loop
                 alert("A critical error occurred while submitting data. Please contact the researcher.");
-                // Re-enable button if something goes wrong
                 submitButton.disabled = false;
                 submitButton.textContent = 'Submit All Evaluations';
-                return; // Stop execution
             }
-
-            // Redirect after a delay
-            setTimeout(() => {
-                window.location.href = prolificCompletionUrl;
-            }, 2500); // Increased delay to 2.5 seconds for maximum safety
         });
     }
 
