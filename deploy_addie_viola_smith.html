@@ -832,7 +832,7 @@ document.addEventListener('DOMContentLoaded', function() {
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting... Please Wait';
 
-            const { formResponseUrl, prolificCompletionUrl, entryIds } = masterFormBlueprint;
+            const { formResponseUrl, prolificCompletionUrl, entry_ids: entryIds } = masterFormBlueprint;
             const allFormData = new FormData(document.getElementById('evaluation-form'));
             const submissionPromises = [];
 
