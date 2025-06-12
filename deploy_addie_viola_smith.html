@@ -56,7 +56,7 @@
 
 <script>
 // =======================================================================
-const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzLJNvnP5Z1vW1w3MxaLygN-1b7aBU5DRM30i7w3LFRFNXt6AoC7FDgoovhTOEsYWAQ/exechttps://script.google.com/macros/s/AKfycbzLJNvnP5Z1vW1w3MxaLygN-1b7aBU5DRM30i7w3LFRFNXt6AoC7FDgoovhTOEsYWAQ/exec';
+const WEB_APP_URL = 'https://script.google.com/macros/s/AKfycbzLJNvnP5Z1vW1w3MxaLygN-1b7aBU5DRM30i7w3LFRFNXt6AoC7FDgoovhTOEsYWAQ/exec';
 const PROLIFIC_COMPLETION_URL = 'https://app.prolific.com/submissions/complete?cc=C10POQX1';
 // =======================================================================
 // === DATA INJECTION POINT (These will be replaced by Python) ===
@@ -276,7 +276,8 @@ document.addEventListener('DOMContentLoaded', function() {
     function generateSimplificationTabHTML(simplification, simpIndex) {
         const pages = [];
         const escapeRegExp = (string) => string ? string.replace(/[.*+?^${}()|[\]\\]/g, '\\$&') : '';
-        const createRadioOption = (name, value, labelText, tooltipText) => `<label class="radio-option-label"><input type="radio" name="${name}" value="${value}" required> ${labelText} <span class="tooltip-container">i<span class="tooltip-text">${tooltipText}</span></span></label>`;
+        // THIS LINE IS THE ONLY CHANGE: The 'required' keyword has been removed from the input.
+        const createRadioOption = (name, value, labelText, tooltipText) => `<label class="radio-option-label"><input type="radio" name="${name}" value="${value}"> ${labelText} <span class="tooltip-container">i<span class="tooltip-text">${tooltipText}</span></span></label>`;
         
         const overallQuestionsHTML = simplification.evaluation.overall_questions.map(q => {
             const labelParts = q.label.split(/:(.*)/s);
@@ -311,8 +312,8 @@ document.addEventListener('DOMContentLoaded', function() {
     }
     
     function generateFinalComparisonHTML(data) {
-        let optionsHTML = data.map((task, i) => `<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="${task.model_id}" required> Version ${i+1}</label>`).join('');
-        return `<div id="comparison" class="tab-content"><h3>Final Comparison</h3><div class="question-block"><label>Which simplification was the best overall?</label>${optionsHTML}<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="All Equal" required> All were about equal</label></div></div>`;
+        let optionsHTML = data.map((task, i) => `<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="${task.model_id}"> Version ${i+1}</label>`).join('');
+        return `<div id="comparison" class="tab-content"><h3>Final Comparison</h3><div class="question-block"><label>Which simplification was the best overall?</label>${optionsHTML}<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="All Equal"> All were about equal</label></div></div>`;
     }
 
     function initializeInteractivity() {
@@ -341,7 +342,6 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.querySelectorAll('.wizard-container').forEach(container => container.querySelector('.wizard-page')?.classList.add('active'));
         
-        // --- FINAL SUBMISSION LOGIC (WEB APP PROXY METHOD) ---
         document.getElementById('evaluation-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const submitButton = document.getElementById('submit-button');
@@ -351,11 +351,9 @@ document.addEventListener('DOMContentLoaded', function() {
             const allFormData = new FormData(document.getElementById('evaluation-form'));
             const allSubmissions = [];
 
-            // Collate all data into a structured array
             taskData.forEach((simplification, simpIndex) => {
                 const dataToSubmit = {};
                 
-                // The key for each piece of data is now the actual Question Title from your form
                 dataToSubmit['Prolific ID'] = prolificId;
                 dataToSubmit['Document Title'] = simplification.title;
                 dataToSubmit['Simplification Model ID'] = simplification.model_id;
@@ -384,23 +382,20 @@ document.addEventListener('DOMContentLoaded', function() {
                 allSubmissions.push(dataToSubmit);
             });
 
-            // Send the entire collection of data to the Web App in one go
             fetch(WEB_APP_URL, {
                 method: 'POST',
-                mode: 'cors', // Use standard 'cors' mode
+                mode: 'cors',
                 headers: {
-                    'Content-Type': 'text/plain;charset=utf-8', // Send as plain text to be parsed by Apps Script
+                    'Content-Type': 'text/plain;charset=utf-8',
                 },
                 body: JSON.stringify(allSubmissions),
             })
             .then(response => response.json())
             .then(data => {
-                console.log(data); // Log the response from our script
+                console.log(data);
                 if (data.status === 'success') {
-                    // Redirect to Prolific on success
                     window.location.href = PROLIFIC_COMPLETION_URL;
                 } else {
-                    // Show an error if the script reported one
                     throw new Error(data.message || 'The script reported an unknown error.');
                 }
             })
