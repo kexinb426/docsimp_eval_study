@@ -40,11 +40,7 @@
 
 <div class="workbench-container">
     <div class="workbench-header"><h1 id="study-title">Document Simplification Evaluation</h1></div>
-    <form id="evaluation-form"
-        action="https://docs.google.com/forms/d/e/1FAIpQLSedQC4SDhGfZeKQeUFTS2ilpP3ff70WVczhFCddkKjkGQNgLQ/formResponse"
-        method="POST"
-        target="hidden_iframe"
-        onsubmit="handleSubmit()">
+    <form id="evaluation-form">
         <div class="workbench-body">
             <aside id="source-panel" class="source-panel"></aside>
             <main class="main-panel">
@@ -409,104 +405,317 @@ const taskData = [
                 }
             ]
         }
+    },
+    {
+        "title": "Addie Viola Smith",
+        "model_id": "gemma_editor",
+        "original": "Addie Viola Smith (November 14, 1893 \u2013 December 13, 1975), also known as Shi Fanglan (Chinese: \u65bd\u82b3\u862d; pinyin: Sh\u012b F\u0101ngl\u00e1n), was an American attorney who served as the United States trade commissioner to Shanghai from 1928 to 1939. She was the first female Foreign Service officer in the United States Foreign Service to work under the United States Department of Commerce, the first woman to serve as an assistant trade commissioner, and the first woman to serve as trade commissioner.\nSmith was born and raised in Stockton, California. In 1917, she moved to Washington, D.C. While working for the United States Department of Labor, she attended the Washington College of Law part-time, earning her bachelor of laws in 1920. In October that year she joined the Foreign Service and was assigned to Beijing as a clerk in the trade commissioner's office. Smith was promoted to assistant trade commissioner in Shanghai in 1922, and appointed trade commissioner of Shanghai in 1928, a post she held until 1939. For the remainder of her career, she held several roles in the United States government, international organizations, and the United Nations.\nThroughout her life, Smith was also a member of several feminist organizations; scholars have described her international feminist activism as being rooted in imperialist and colonialist attitudes. Smith met her life partner, Eleanor Hinder, in Shanghai in 1926. They lived together until Hinder's death in 1963. Smith died on December 13, 1975, aged 82, in Mosman, New South Wales, and was cremated. She and Hinder were memorialized by their friends with two stone seats at the E.G. Waterhouse National Camellia Gardens in Caringbah.\n\n",
+        "simplified": "Addie Viola Smith, born November 14, 1893, and died December 13, 1975, was an American lawyer. She worked as the United States trade commissioner in Shanghai from 1928 to 1939. She was a very important figure because she was the first woman to hold this position within the U.S. Foreign Service, which was part of the Department of Commerce.\n\nAddie grew up in Stockton, California, and later moved to Washington, D.C. She studied law at Washington College of Law and became a clerk in the trade commissioner\u2019s office in Beijing in 1917.  She was promoted to assistant trade commissioner in Shanghai in 1922 and then became the trade commissioner of Shanghai in 1928, a role she kept until 1939. After this, she continued to work for the U.S. government, various international groups, and the United Nations.\n\nAddie was also involved in feminist movements. Some historians believe her activism was influenced by the ideas of the time regarding empires and colonies. In Shanghai in 1926, she met Eleanor Hinder, and they lived together until Eleanor died in 1963. Addie died in 1975 at the age of 82 in Australia.  Her friends created two stone benches in the E.G. Waterhouse National Camellia Gardens in her memory.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "also known as Shi Fanglan (Chinese: \u65bd\u82b3\u862d; pinyin: Sh\u012b F\u0101ngl\u00e1n)",
+                    "simplified_span": "was an American lawyer.",
+                    "explanation": "The simplified text omits Addie Viola Smith's Chinese name, Shi Fanglan, which is part of her identity and relevant to her work in China.",
+                    "suggested_fix": "Add 'also known as Shi Fanglan' after 'was an American lawyer.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "She was the first female Foreign Service officer in the United States Foreign Service to work under the United States Department of Commerce, the first woman to serve as an assistant trade commissioner, and the first woman to serve as trade commissioner.",
+                    "simplified_span": "She was a very important figure because she was the first woman to hold this position within the U.S. Foreign Service, which was part of the Department of Commerce.",
+                    "explanation": "The simplified text omits the specific achievements of Smith being the first female Foreign Service officer, the first woman assistant trade commissioner, and the first woman trade commissioner.",
+                    "suggested_fix": "Include the specific achievements: 'She was the first female Foreign Service officer in the United States Foreign Service to work under the United States Department of Commerce, the first woman to serve as an assistant trade commissioner, and the first woman to serve as trade commissioner.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "While working for the United States Department of Labor, she attended the Washington College of Law part-time, earning her bachelor of laws in 1920.",
+                    "simplified_span": "She studied law at Washington College of Law and became a clerk in the trade commissioner\u2019s office in Beijing in 1917.",
+                    "explanation": "The simplified text incorrectly suggests that Smith became a clerk in 1917 before attending law school, whereas she attended law school while working for the Department of Labor and earned her degree in 1920.",
+                    "suggested_fix": "Clarify the timeline: 'While working for the United States Department of Labor, she attended the Washington College of Law part-time, earning her bachelor of laws in 1920, and then became a clerk in the trade commissioner\u2019s office in Beijing.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "scholars have described her international feminist activism as being rooted in imperialist and colonialist attitudes.",
+                    "simplified_span": "Some historians believe her activism was influenced by the ideas of the time regarding empires and colonies.",
+                    "explanation": "The simplified text softens the critique of Smith's activism by using 'influenced by the ideas of the time' instead of 'rooted in imperialist and colonialist attitudes,' which changes the emphasis and critical tone.",
+                    "suggested_fix": "Use the original phrasing: 'Some historians have described her international feminist activism as being rooted in imperialist and colonialist attitudes.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Smith died on December 13, 1975, aged 82, in Mosman, New South Wales, and was cremated.",
+                    "simplified_span": "Addie died in 1975 at the age of 82 in Australia.",
+                    "explanation": "The simplified text omits the specific location of Smith's death, Mosman, New South Wales, and the fact that she was cremated.",
+                    "suggested_fix": "Include the specific location and cremation: 'Addie died on December 13, 1975, at the age of 82 in Mosman, New South Wales, Australia, and was cremated.'"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Addie Viola Smith, born November 14, 1893, and died December 13, 1975, was an American lawyer.",
+                    "explanation": "The sentence structure is clunky due to the placement of birth and death dates, which interrupts the flow.",
+                    "suggested_fix": "Addie Viola Smith was an American lawyer, born on November 14, 1893, and died on December 13, 1975."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "She was a very important figure because she was the first woman to hold this position within the U.S. Foreign Service, which was part of the Department of Commerce.",
+                    "explanation": "The phrase 'very important figure' is vague and does not specify why she was important.",
+                    "suggested_fix": "She was a pioneering figure as the first woman to hold this position within the U.S. Foreign Service, part of the Department of Commerce."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Addie grew up in Stockton, California, and later moved to Washington, D.C.",
+                    "explanation": "The transition between her early life and her career is abrupt, lacking a clear connection.",
+                    "suggested_fix": "Addie grew up in Stockton, California, and later moved to Washington, D.C., where she pursued her education and career."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Some historians believe her activism was influenced by the ideas of the time regarding empires and colonies.",
+                    "explanation": "The phrase 'ideas of the time regarding empires and colonies' is vague and lacks specificity.",
+                    "suggested_fix": "Some historians believe her activism was influenced by contemporary ideas about imperialism and colonialism."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Addie died in 1975 at the age of 82 in Australia.",
+                    "explanation": "The sentence structure is awkward due to the placement of age and location.",
+                    "suggested_fix": "Addie died in Australia in 1975 at the age of 82."
+                }
+            ]
+        }
     }
 ];
 const masterFormBlueprint = {
     "title": "",
-    "form_id": "1a7TF1QffKB-iWZ6rAUnaX6MSuKT-65gUjd4pUjzI6oY",
-    "form_response_url": "https://docs.google.com/forms/d/e/1FAIpQLSedQC4SDhGfZeKQeUFTS2ilpP3ff70WVczhFCddkKjkGQNgLQ/formResponse",
+    "form_id": "1Y7ehGe00BPog3M7SiE9E-9LihpsMro5bFAZVMW90Xu4",
+    "form_response_url": "https://docs.google.com/forms/d/e/1FAIpQLSfndgEdmxHNcyeXG96jNsbDR6JM2N56APmwZJXYcajp1j6uIw/formResponse",
     "entry_ids": {
-        "prolific_id": "entry.846212236",
-        "study_task_id": "entry.455754009",
-        "document_title": "entry.1378346793",
-        "simplification_model_id": "entry.774775892",
-        "fluency": "entry.326270780",
-        "clarity": "entry.598749023",
-        "conciseness": "entry.1964403449",
-        "style": "entry.689859859",
-        "overall_quality": "entry.1297018280",
-        "span_1_text_id": "entry.449458165",
-        "span_1_severity_id": "entry.314350306",
-        "span_1_explanation_id": "entry.131269470",
-        "span_1_fix_id": "entry.2000151508",
-        "span_2_text_id": "entry.2007500906",
-        "span_2_severity_id": "entry.1579108510",
-        "span_2_explanation_id": "entry.1059850918",
-        "span_2_fix_id": "entry.703068457",
-        "span_3_text_id": "entry.866687517",
-        "span_3_severity_id": "entry.33018044",
-        "span_3_explanation_id": "entry.402027680",
-        "span_3_fix_id": "entry.79120381",
-        "span_4_text_id": "entry.807722797",
-        "span_4_severity_id": "entry.1284762168",
-        "span_4_explanation_id": "entry.1440535268",
-        "span_4_fix_id": "entry.54151158",
-        "span_5_text_id": "entry.1897525607",
-        "span_5_severity_id": "entry.1135184067",
-        "span_5_explanation_id": "entry.89119067",
-        "span_5_fix_id": "entry.2017671314",
-        "span_6_text_id": "entry.2134939548",
-        "span_6_severity_id": "entry.1358243481",
-        "span_6_explanation_id": "entry.1659254799",
-        "span_6_fix_id": "entry.1709236535",
-        "span_7_text_id": "entry.1503601412",
-        "span_7_severity_id": "entry.713684302",
-        "span_7_explanation_id": "entry.242880027",
-        "span_7_fix_id": "entry.624189197",
-        "span_8_text_id": "entry.912548582",
-        "span_8_severity_id": "entry.488994104",
-        "span_8_explanation_id": "entry.1592102442",
-        "span_8_fix_id": "entry.606806211",
-        "span_9_text_id": "entry.1085022200",
-        "span_9_severity_id": "entry.933790265",
-        "span_9_explanation_id": "entry.1284396221",
-        "span_9_fix_id": "entry.327953136",
-        "span_10_text_id": "entry.601725627",
-        "span_10_severity_id": "entry.19298471",
-        "span_10_explanation_id": "entry.1938438558",
-        "span_10_fix_id": "entry.1539289194",
-        "span_11_text_id": "entry.1874708272",
-        "span_11_severity_id": "entry.1566676669",
-        "span_11_explanation_id": "entry.1845814782",
-        "span_11_fix_id": "entry.1669366933",
-        "span_12_text_id": "entry.676063351",
-        "span_12_severity_id": "entry.2108376855",
-        "span_12_explanation_id": "entry.1040220574",
-        "span_12_fix_id": "entry.677948538",
-        "span_13_text_id": "entry.692136206",
-        "span_13_severity_id": "entry.1743573842",
-        "span_13_explanation_id": "entry.1032078867",
-        "span_13_fix_id": "entry.348935043",
-        "span_14_text_id": "entry.1893372296",
-        "span_14_severity_id": "entry.1939350864",
-        "span_14_explanation_id": "entry.1480572067",
-        "span_14_fix_id": "entry.1339072142",
-        "span_15_text_id": "entry.1560812224",
-        "span_15_severity_id": "entry.1753539689",
-        "span_15_explanation_id": "entry.951468158",
-        "span_15_fix_id": "entry.2095969232",
-        "span_16_text_id": "entry.500837097",
-        "span_16_severity_id": "entry.1520649612",
-        "span_16_explanation_id": "entry.1210397952",
-        "span_16_fix_id": "entry.1877426936",
-        "span_17_text_id": "entry.61066234",
-        "span_17_severity_id": "entry.844856912",
-        "span_17_explanation_id": "entry.149211093",
-        "span_17_fix_id": "entry.1910492459",
-        "span_18_text_id": "entry.545888749",
-        "span_18_severity_id": "entry.1409200718",
-        "span_18_explanation_id": "entry.850378060",
-        "span_18_fix_id": "entry.1070613044",
-        "span_19_text_id": "entry.134492675",
-        "span_19_severity_id": "entry.501177220",
-        "span_19_explanation_id": "entry.847955680",
-        "span_19_fix_id": "entry.1168956498",
-        "span_20_text_id": "entry.2121038644",
-        "span_20_severity_id": "entry.219040793",
-        "span_20_explanation_id": "entry.1954856952",
-        "span_20_fix_id": "entry.2121840599",
-        "missed_issues_text": "entry.1166901822",
-        "missed_issues_none": "entry.1579498436"
+        "prolific_id": "entry.1641728435",
+        "study_task_id": "entry.975413040",
+        "document_title": "entry.2019566182",
+        "simplification_model_id": "entry.1603047818",
+        "fluency": "entry.1023799960",
+        "clarity": "entry.2142356029",
+        "conciseness": "entry.1596453663",
+        "style": "entry.344867456",
+        "overall_quality": "entry.1423688542",
+        "span_1_text_id": "entry.201589484",
+        "span_1_severity_id": "entry.1044641147",
+        "span_1_explanation_id": "entry.1621574316",
+        "span_1_fix_id": "entry.1716049822",
+        "span_2_text_id": "entry.96662513",
+        "span_2_severity_id": "entry.1779722240",
+        "span_2_explanation_id": "entry.187916775",
+        "span_2_fix_id": "entry.1032483144",
+        "span_3_text_id": "entry.2045861433",
+        "span_3_severity_id": "entry.698569737",
+        "span_3_explanation_id": "entry.1175762975",
+        "span_3_fix_id": "entry.910158206",
+        "span_4_text_id": "entry.1016825185",
+        "span_4_severity_id": "entry.1100302845",
+        "span_4_explanation_id": "entry.1059456679",
+        "span_4_fix_id": "entry.1280218488",
+        "span_5_text_id": "entry.1916311038",
+        "span_5_severity_id": "entry.456916148",
+        "span_5_explanation_id": "entry.79664145",
+        "span_5_fix_id": "entry.1032227365",
+        "span_6_text_id": "entry.1115969270",
+        "span_6_severity_id": "entry.1676635501",
+        "span_6_explanation_id": "entry.382979620",
+        "span_6_fix_id": "entry.298424575",
+        "span_7_text_id": "entry.686604234",
+        "span_7_severity_id": "entry.34220767",
+        "span_7_explanation_id": "entry.708847223",
+        "span_7_fix_id": "entry.795761592",
+        "span_8_text_id": "entry.661364923",
+        "span_8_severity_id": "entry.236175553",
+        "span_8_explanation_id": "entry.1791820985",
+        "span_8_fix_id": "entry.298349590",
+        "span_9_text_id": "entry.801280874",
+        "span_9_severity_id": "entry.621340040",
+        "span_9_explanation_id": "entry.611879530",
+        "span_9_fix_id": "entry.1412455209",
+        "span_10_text_id": "entry.1970544739",
+        "span_10_severity_id": "entry.1273737843",
+        "span_10_explanation_id": "entry.1432855076",
+        "span_10_fix_id": "entry.66010245",
+        "span_11_text_id": "entry.488922546",
+        "span_11_severity_id": "entry.455007372",
+        "span_11_explanation_id": "entry.1979640949",
+        "span_11_fix_id": "entry.542534205",
+        "span_12_text_id": "entry.2029637668",
+        "span_12_severity_id": "entry.289003223",
+        "span_12_explanation_id": "entry.1795503236",
+        "span_12_fix_id": "entry.1250732562",
+        "span_13_text_id": "entry.1575325469",
+        "span_13_severity_id": "entry.769477191",
+        "span_13_explanation_id": "entry.255232403",
+        "span_13_fix_id": "entry.600228383",
+        "span_14_text_id": "entry.285926682",
+        "span_14_severity_id": "entry.131806950",
+        "span_14_explanation_id": "entry.528004049",
+        "span_14_fix_id": "entry.1972532563",
+        "span_15_text_id": "entry.935686439",
+        "span_15_severity_id": "entry.204065219",
+        "span_15_explanation_id": "entry.2001532115",
+        "span_15_fix_id": "entry.1471999675",
+        "span_16_text_id": "entry.1847993664",
+        "span_16_severity_id": "entry.967827442",
+        "span_16_explanation_id": "entry.522756821",
+        "span_16_fix_id": "entry.1000593747",
+        "span_17_text_id": "entry.1746977603",
+        "span_17_severity_id": "entry.574726844",
+        "span_17_explanation_id": "entry.375781308",
+        "span_17_fix_id": "entry.369053431",
+        "span_18_text_id": "entry.1705432400",
+        "span_18_severity_id": "entry.268234303",
+        "span_18_explanation_id": "entry.1602721037",
+        "span_18_fix_id": "entry.1084936701",
+        "span_19_text_id": "entry.1229723836",
+        "span_19_severity_id": "entry.250664122",
+        "span_19_explanation_id": "entry.1045393847",
+        "span_19_fix_id": "entry.2057364682",
+        "span_20_text_id": "entry.1245597241",
+        "span_20_severity_id": "entry.757759723",
+        "span_20_explanation_id": "entry.737109408",
+        "span_20_fix_id": "entry.2093806631",
+        "missed_issues_text": "entry.617722766",
+        "missed_issues_none": "entry.331827870",
+        "final_comparison_choice": "entry.842315270"
     },
     "prolificCompletionUrl": "https://app.prolific.com/submissions/complete?cc=C10POQX1"
 };
@@ -614,7 +823,9 @@ document.addEventListener('DOMContentLoaded', function() {
         
         document.querySelectorAll('.wizard-container').forEach(container => container.querySelector('.wizard-page')?.classList.add('active'));
         
-        // --- FINAL SUBMISSION LOGIC ---
+        // ==========================================================
+        // === START: REVISED FINAL SUBMISSION LOGIC ===
+        // ==========================================================
         document.getElementById('evaluation-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const submitButton = document.getElementById('submit-button');
@@ -627,65 +838,69 @@ document.addEventListener('DOMContentLoaded', function() {
 
             taskData.forEach((simplification, simpIndex) => {
                 const singleTaskFormData = new FormData();
+
+                // Append constant data for this task
                 singleTaskFormData.append(entryIds.prolific_id, prolificId);
                 singleTaskFormData.append(entryIds.document_title, simplification.title);
-                singleTaskFormData.append(entryIds.model_id, simplification.model_id);
+                singleTaskFormData.append(entryIds.simplification_model_id, simplification.model_id);
 
+                // Append overall quality questions
                 simplification.evaluation.overall_questions.forEach(q => {
-                    singleTaskFormData.append(entryIds[q.key], allFormData.get(`s${simpIndex}_${q.key}`) || '');
+                    const entryKey = (q.key === 'overall_impression') ? 'overall_quality' : q.key;
+                    singleTaskFormData.append(entryIds[entryKey], allFormData.get(`s${simpIndex}_${q.key}`) || '');
                 });
 
+                // Append simplicity issue evaluations
                 simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
                     const spanNum = issueIndex + 1;
-                    singleTaskFormData.append(entryIds[`span_${spanNum}_severity`], allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '');
-                    singleTaskFormData.append(entryIds[`span_${spanNum}_explanation_ok`], allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '');
-                    singleTaskFormData.append(entryIds[`span_${spanNum}_fix_ok`], allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '');
+                    if (entryIds[`span_${spanNum}_text_id`]) {
+                        singleTaskFormData.append(entryIds[`span_${spanNum}_text_id`], issue.simplified_span || 'SPAN_NOT_FOUND');
+                    }
+                    // Corrected keys: added "_id" suffix, fixed explanation/fix keys
+                    singleTaskFormData.append(entryIds[`span_${spanNum}_severity_id`], allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '');
+                    singleTaskFormData.append(entryIds[`span_${spanNum}_explanation_id`], allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '');
+                    singleTaskFormData.append(entryIds[`span_${spanNum}_fix_id`], allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '');
                 });
 
-                singleTaskFormData.append(entryIds.missed_issues, allFormData.get(`s${simpIndex}_missed_issues_text`) || 'None');
+                // Append additional feedback
+                const missedIssuesText = allFormData.get(`s${simpIndex}_missed_issues_text`);
+                const isNoneChecked = allFormData.get(`s${simpIndex}_missed_issues_none`);
+                singleTaskFormData.append(entryIds.missed_issues_text, isNoneChecked ? 'None' : missedIssuesText || '');
+                singleTaskFormData.append(entryIds.missed_issues_none, isNoneChecked ? 'I did not notice any other issues.' : '');
+                
+                // Add Final Comparison choice to the LAST submission
+                if (simpIndex === taskData.length - 1) {
+                    if (entryIds.final_comparison_choice) {
+                        singleTaskFormData.append(entryIds.final_comparison_choice, allFormData.get('final_choice') || '');
+                    } else {
+                        console.warn("Warning: 'final_comparison_choice' is not defined in the blueprint's entry_ids. This data will not be submitted.");
+                    }
+                }
                 
                 const promise = fetch(formResponseUrl, { method: 'POST', body: singleTaskFormData, mode: 'no-cors' });
                 submissionPromises.push(promise);
-});
+            });
 
             Promise.all(submissionPromises)
                 .then(() => {
-                    console.log('All submissions successful. Redirecting to Prolific.');
+                    console.log('All form submissions processed. Redirecting to Prolific.');
                     window.location.href = prolificCompletionUrl;
                 })
                 .catch(error => {
-                    console.error('Submission Error:', error);
-                    alert('A critical error occurred. Please contact the researcher.');
+                    console.error('A critical error occurred during submission:', error);
+                    alert('A submission error occurred. Your responses could not be saved. Please contact the researcher and describe the error.');
                     submitButton.disabled = false;
                     submitButton.textContent = 'Submit All Evaluations';
                 });
         });
+        // ========================================================
+        // === END: REVISED FINAL SUBMISSION LOGIC ===
+        // ========================================================
     }
 
     buildInterface();
 });
 </script>
-<script>
-  let justSubmitted = false;
-
-  function handleSubmit() {
-    justSubmitted = true;
-    const submitButton = document.getElementById('submit-button');
-    if (submitButton) {
-      submitButton.disabled = true;
-      submitButton.textContent = 'Submitting, please wait...';
-    }
-  }
-
-  function redirectAfterSubmit() {
-    if (justSubmitted) {
-      window.location.href = "https://app.prolific.com/submissions/complete?cc=C10POQX1";
-    }
-  }
-</script>
-
-<!-- ✅ PLACE THE IFRAME *AFTER* THE SCRIPT, BUT *BEFORE* </body> -->
-<iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="redirectAfterSubmit()"></iframe>
 
 </body>
 </html>
