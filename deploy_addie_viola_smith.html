@@ -511,6 +511,7 @@ const masterFormBlueprint = {
 
 document.addEventListener('DOMContentLoaded', function() {
     
+    // Check for valid data injection
     if (typeof taskData === 'string' || typeof masterFormBlueprint === 'string') {
         document.body.innerHTML = '<h1>Error: Data not injected into template. Please run the Python script to generate a survey file.</h1>';
         return;
@@ -520,15 +521,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const tabsContainer = document.getElementById('tabs-container');
     const contentContainer = document.getElementById('content-container');
     const submitContainer = document.getElementById('submit-button-container');
-    let originalSourceHTML = '';
     let prolificId = '';
 
+    // --- UI BUILDING FUNCTIONS ---
     function buildInterface() {
         const urlParams = new URLSearchParams(window.location.search);
         prolificId = urlParams.get('PROLIFIC_PID') || 'PROLIFIC_ID_NOT_FOUND';
         
-        originalSourceHTML = `<h2>Source Document</h2><p><strong>Title:</strong> ${taskData[0].title}</p><p>${taskData[0].original.replace(/\n/g, '<br>')}</p>`;
-        sourcePanel.innerHTML = originalSourceHTML;
+        sourcePanel.innerHTML = `<h2>Source Document</h2><p><strong>Title:</strong> ${taskData[0].title}</p><p>${taskData[0].original.replace(/\n/g, '<br>')}</p>`;
         
         let tabsHTML = '<button type="button" class="tab-button active" data-tab="instructions">Instructions</button>';
         taskData.forEach((_, i) => { tabsHTML += `<button type="button" class="tab-button" data-tab="s${i}">Version ${i + 1}</button>`; });
@@ -567,18 +567,18 @@ document.addEventListener('DOMContentLoaded', function() {
         });
         
         pages.push({
-                type: 'feedback',
-                content: `<h3>Additional Feedback</h3>
-                        <div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div>
-                        <div class="question-block">
-                            <label>Did you notice any other issues while reading that were not highlighted? If so, please paste relevant spans here or describe them below.</label>
-                            <textarea name="s${simpIndex}_missed_issues_text" class="missed-issues-textarea" data-simp-index="${simpIndex}" rows="5" style="width: 95%; padding: 5px;"></textarea>
-                            <div style="margin-top: 10px;"><label><input type="checkbox" name="s${simpIndex}_missed_issues_none" class="missed-issues-none-checkbox" data-simp-index="${simpIndex}" value="None"> I did not notice any other issues.</label></div>
-                        </div>`
-            });
-            const wizardPagesHTML = pages.map((page, pageIndex) => `<div class="wizard-page" data-page-index="${pageIndex}" data-issue-type="${page.type}" data-original-span="${page.originalSpan || ''}">${page.content}<div class="wizard-nav"><button type="button" class="wizard-nav-button prev" style="visibility: ${pageIndex > 0 ? 'visible' : 'hidden'};">&laquo; Previous</button><span>Page ${pageIndex + 1} of ${pages.length}</span><button type="button" class="wizard-nav-button next" style="visibility: ${pageIndex < pages.length - 1 ? 'visible' : 'hidden'};">Next &raquo;</button></div></div>`).join('');
-            return `<div id="s${simpIndex}" class="tab-content wizard-container">${wizardPagesHTML}</div>`;
-        }
+            type: 'feedback',
+            content: `<h3>Additional Feedback</h3>
+                    <div class="wizard-context-header"><p>${simplification.simplified.replace(/\n/g, '<br>')}</p></div>
+                    <div class="question-block">
+                        <label>Did you notice any other issues while reading that were not highlighted? If so, please paste relevant spans here or describe them below.</label>
+                        <textarea name="s${simpIndex}_missed_issues_text" class="missed-issues-textarea" data-simp-index="${simpIndex}" rows="5" style="width: 95%; padding: 5px;"></textarea>
+                        <div style="margin-top: 10px;"><label><input type="checkbox" name="s${simpIndex}_missed_issues_none" class="missed-issues-none-checkbox" data-simp-index="${simpIndex}" value="None"> I did not notice any other issues.</label></div>
+                    </div>`
+        });
+        const wizardPagesHTML = pages.map((page, pageIndex) => `<div class="wizard-page" data-page-index="${pageIndex}" data-issue-type="${page.type}" data-original-span="${page.originalSpan || ''}">${page.content}<div class="wizard-nav"><button type="button" class="wizard-nav-button prev" style="visibility: ${pageIndex > 0 ? 'visible' : 'hidden'};">&laquo; Previous</button><span>Page ${pageIndex + 1} of ${pages.length}</span><button type="button" class="wizard-nav-button next" style="visibility: ${pageIndex < pages.length - 1 ? 'visible' : 'hidden'};">Next &raquo;</button></div></div>`).join('');
+        return `<div id="s${simpIndex}" class="tab-content wizard-container">${wizardPagesHTML}</div>`;
+    }
     
     function generateFinalComparisonHTML(data) {
         let optionsHTML = data.map((task, i) => `<label style="margin-right: 15px;"><input type="radio" name="final_choice" value="${task.model_id}" required> Version ${i+1}</label>`).join('');
@@ -586,6 +586,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     function initializeInteractivity() {
+        // Tab switching logic
         tabsContainer.addEventListener('click', (e) => {
             if (e.target.matches('.tab-button')) {
                 const tabId = e.target.dataset.tab;
@@ -598,6 +599,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
 
+        // Wizard navigation logic
         contentContainer.addEventListener('click', (e) => {
             if (e.target.matches('.wizard-nav-button')) {
                 const wizardContainer = e.target.closest('.wizard-container');
@@ -609,89 +611,103 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
         
+        // Show first page of each wizard
         document.querySelectorAll('.wizard-container').forEach(container => container.querySelector('.wizard-page')?.classList.add('active'));
         
-        // ==========================================================
-        // === START: REVISED FINAL SUBMISSION LOGIC ===
-        // ==========================================================
+        // --- FINAL SUBMISSION LOGIC ---
         document.getElementById('evaluation-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const submitButton = document.getElementById('submit-button');
             submitButton.disabled = true;
             submitButton.textContent = 'Submitting... Please Wait';
 
+            // Create a single hidden iframe to handle all submissions
+            const iframe = document.createElement('iframe');
+            iframe.name = 'hidden-submission-iframe';
+            iframe.style.display = 'none';
+            document.body.appendChild(iframe);
+
             const { formResponseUrl, prolificCompletionUrl, entry_ids: entryIds } = masterFormBlueprint;
             const allFormData = new FormData(document.getElementById('evaluation-form'));
-            const submissionPromises = [];
+            
+            // Function to submit a single task's data via a hidden form
+            const submitTaskData = (simplification, simpIndex) => {
+                const dataToSubmit = {};
+                
+                // Collect metadata
+                dataToSubmit[entryIds.prolific_id] = prolificId;
+                dataToSubmit[entryIds.document_title] = simplification.title;
+                dataToSubmit[entryIds.simplification_model_id] = simplification.model_id;
 
-            taskData.forEach((simplification, simpIndex) => {
-                const singleTaskFormData = new FormData();
-
-                // Append constant data for this task
-                singleTaskFormData.append(entryIds.prolific_id, prolificId);
-                singleTaskFormData.append(entryIds.document_title, simplification.title);
-                singleTaskFormData.append(entryIds.simplification_model_id, simplification.model_id);
-
-                // Append overall quality questions
+                // Collect overall quality questions
                 simplification.evaluation.overall_questions.forEach(q => {
                     const entryKey = (q.key === 'overall_impression') ? 'overall_quality' : q.key;
-                    singleTaskFormData.append(entryIds[entryKey], allFormData.get(`s${simpIndex}_${q.key}`) || '');
+                    dataToSubmit[entryIds[entryKey]] = allFormData.get(`s${simpIndex}_${q.key}`) || '';
                 });
 
-                // Append simplicity issue evaluations
+                // Collect simplicity issue evaluations
                 simplification.evaluation.simplicity_issues.forEach((issue, issueIndex) => {
                     const spanNum = issueIndex + 1;
                     if (entryIds[`span_${spanNum}_text_id`]) {
-                        singleTaskFormData.append(entryIds[`span_${spanNum}_text_id`], issue.simplified_span || 'SPAN_NOT_FOUND');
+                        dataToSubmit[entryIds[`span_${spanNum}_text_id`]] = issue.simplified_span || 'SPAN_NOT_FOUND';
                     }
-                    // Corrected keys: added "_id" suffix, fixed explanation/fix keys
-                    singleTaskFormData.append(entryIds[`span_${spanNum}_severity_id`], allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '');
-                    singleTaskFormData.append(entryIds[`span_${spanNum}_explanation_id`], allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '');
-                    singleTaskFormData.append(entryIds[`span_${spanNum}_fix_id`], allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '');
+                    dataToSubmit[entryIds[`span_${spanNum}_severity_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_severity`) || '';
+                    dataToSubmit[entryIds[`span_${spanNum}_explanation_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_explanation`) || '';
+                    dataToSubmit[entryIds[`span_${spanNum}_fix_id`]] = allFormData.get(`s${simpIndex}_span${issueIndex}_fix`) || '';
                 });
 
-                // Append additional feedback
+                // Collect additional feedback
                 const missedIssuesText = allFormData.get(`s${simpIndex}_missed_issues_text`);
                 const isNoneChecked = allFormData.get(`s${simpIndex}_missed_issues_none`);
-                singleTaskFormData.append(entryIds.missed_issues_text, isNoneChecked ? 'None' : missedIssuesText || '');
-                singleTaskFormData.append(entryIds.missed_issues_none, isNoneChecked ? 'Checked' : '');
+                dataToSubmit[entryIds.missed_issues_text] = isNoneChecked ? 'None' : missedIssuesText || '';
+                dataToSubmit[entryIds.missed_issues_none] = isNoneChecked ? 'Checked' : '';
                 
                 // Add Final Comparison choice to the LAST submission
                 if (simpIndex === taskData.length - 1) {
                     if (entryIds.final_comparison_choice) {
-                        singleTaskFormData.append(entryIds.final_comparison_choice, allFormData.get('final_choice') || '');
-                    } else {
-                        console.warn("Warning: 'final_comparison_choice' is not defined in the blueprint's entry_ids. This data will not be submitted.");
+                        dataToSubmit[entryIds.final_comparison_choice] = allFormData.get('final_choice') || '';
                     }
                 }
-                
-                const promise = fetch(formResponseUrl, { method: 'POST', body: singleTaskFormData, mode: 'no-cors' });
-                submissionPromises.push(promise);
-            });
 
-            Promise.all(submissionPromises)
-                .then(() => {
-                    console.log('All form submissions have been dispatched. Waiting 1.5 seconds before redirecting...');
-                    
-                    // Add a 1.5 second delay to ensure the browser has time to send the data
-                    // before the page is changed. This fixes the race condition.
-                    setTimeout(() => {
-                        console.log('Redirecting to Prolific.');
-                        window.location.href = prolificCompletionUrl;
-                    }, 1500); 
-                })
-                .catch(error => {
-                    console.error('A critical error occurred during submission:', error);
-                    alert('A submission error occurred. Your responses could not be saved. Please contact the researcher and describe the error.');
-                    submitButton.disabled = false;
-                    submitButton.textContent = 'Submit All Evaluations';
-                });
+                // Create and submit the hidden form
+                const form = document.createElement('form');
+                form.action = formResponseUrl;
+                form.method = 'POST';
+                form.target = iframe.name;
+
+                for (const key in dataToSubmit) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = key;
+                    input.value = dataToSubmit[key];
+                    form.appendChild(input);
+                }
+
+                document.body.appendChild(form);
+                form.submit();
+                document.body.removeChild(form);
+            };
+
+            // Submit data for each task
+            try {
+                taskData.forEach(submitTaskData);
+            } catch (error) {
+                console.error("Error during submission loop:", error);
+                alert("A critical error occurred while submitting data. Please contact the researcher.");
+                // Re-enable button if something goes wrong
+                submitButton.disabled = false;
+                submitButton.textContent = 'Submit All Evaluations';
+                return; // Stop execution
+            }
+
+            // Redirect after a delay
+            setTimeout(() => {
+                window.location.href = prolificCompletionUrl;
+            }, 2500); // Increased delay to 2.5 seconds for maximum safety
         });
-        // ========================================================
-        // === END: REVISED FINAL SUBMISSION LOGIC ===
-        // ========================================================
     }
 
+    // Start the interface
     buildInterface();
 });
 </script>
