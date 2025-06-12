@@ -671,8 +671,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
             Promise.all(submissionPromises)
                 .then(() => {
-                    console.log('All form submissions processed. Redirecting to Prolific.');
-                    window.location.href = prolificCompletionUrl;
+                    console.log('All form submissions have been dispatched. Waiting 1.5 seconds before redirecting...');
+                    
+                    // Add a 1.5 second delay to ensure the browser has time to send the data
+                    // before the page is changed. This fixes the race condition.
+                    setTimeout(() => {
+                        console.log('Redirecting to Prolific.');
+                        window.location.href = prolificCompletionUrl;
+                    }, 1500); 
                 })
                 .catch(error => {
                     console.error('A critical error occurred during submission:', error);
