@@ -1,0 +1,603 @@
+[
+    {
+        "title": "Edward Mitchell Bannister",
+        "model_id": "claude_editor",
+        "original": "Edward Mitchell Bannister (November 2, 1828 – January 9, 1901) was a Canadian–American oil painter of the American Barbizon school. Born in colonial New Brunswick, he spent his adult life in New England in the United States. There, along with his wife Christiana Carteaux, he was a prominent member of African-American cultural and political communities, such as the Boston abolition movement. Bannister received national recognition after he won a first prize in painting at the 1876 Philadelphia Centennial Exhibition. He was also a founding member of the Providence Art Club and the Rhode Island School of Design.\nBannister's style and predominantly pastoral subject matter reflected his admiration for the French artist Jean-François Millet and the French Barbizon school. A lifelong sailor, he also looked to the Rhode Island seaside for inspiration. Bannister continually experimented, and his artwork displays his Idealist philosophy and his control of color and atmosphere. He began his professional practice as a photographer and portraitist before developing his better-known landscape style.\nLater in his life, Bannister's style of landscape painting fell out of favor. With decreasing painting sales, he and Christiana Carteaux moved out of College Hill in Providence to Boston and then a smaller house on Wilson Street in Providence. Bannister was overlooked in American art historical studies and exhibitions after his death in 1901, until institutions like the National Museum of African Art returned him to national attention in the 1960s and 1970s.\n\n",
+        "simplified": "Edward Mitchell Bannister was a painter who lived from 1828 to 1901. He was born in Canada but spent most of his life in the United States. Bannister was known for his oil paintings of nature scenes, similar to a group of French artists called the Barbizon school.\n\nBannister and his wife, Christiana Carteaux, were important members of the African-American community. They were involved in movements to end slavery in Boston. In 1876, Bannister won a major prize at a big art show in Philadelphia. This made him famous across the country. He also helped start an art club in Providence and an art school in Rhode Island.\n\nBannister loved to paint outdoor scenes, especially those inspired by the seaside in Rhode Island. He was also a sailor. His paintings show his skill with colors and creating mood. He started his career as a photographer and portrait painter before focusing on landscapes.\n\nAs he got older, people became less interested in Bannister's style of painting. He and his wife had to move to smaller homes because they weren't selling as many paintings. After Bannister died in 1901, people forgot about him for many years. It wasn't until the 1960s and 1970s that museums started to show his work again and remind people of his importance.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Born in colonial New Brunswick, he spent his adult life in New England in the United States.",
+                    "simplified_span": "He was born in Canada but spent most of his life in the United States.",
+                    "explanation": "The original specifies that Bannister was born in colonial New Brunswick, which is a specific historical context, whereas the simplified version generalizes this to 'Canada,' losing the historical nuance.",
+                    "suggested_fix": "He was born in colonial New Brunswick, Canada, but spent most of his life in the United States."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Bannister received national recognition after he won a first prize in painting at the 1876 Philadelphia Centennial Exhibition.",
+                    "simplified_span": "In 1876, Bannister won a major prize at a big art show in Philadelphia. This made him famous across the country.",
+                    "explanation": "The simplified version omits the specific name of the exhibition, 'Philadelphia Centennial Exhibition,' which is an important detail for historical context.",
+                    "suggested_fix": "In 1876, Bannister won a first prize in painting at the Philadelphia Centennial Exhibition, which made him famous across the country."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Bannister's style and predominantly pastoral subject matter reflected his admiration for the French artist Jean-François Millet and the French Barbizon school.",
+                    "simplified_span": "Bannister was known for his oil paintings of nature scenes, similar to a group of French artists called the Barbizon school.",
+                    "explanation": "The simplified version omits Bannister's specific admiration for the French artist Jean-François Millet, which is a key influence on his work.",
+                    "suggested_fix": "Bannister was known for his oil paintings of nature scenes, reflecting his admiration for the French artist Jean-François Millet and similar to a group of French artists called the Barbizon school."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Bannister continually experimented, and his artwork displays his Idealist philosophy and his control of color and atmosphere.",
+                    "simplified_span": "His paintings show his skill with colors and creating mood.",
+                    "explanation": "The simplified version omits the mention of Bannister's 'Idealist philosophy,' which is an important aspect of his artistic approach.",
+                    "suggested_fix": "His paintings show his skill with colors, creating mood, and reflect his Idealist philosophy."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Bannister was overlooked in American art historical studies and exhibitions after his death in 1901, until institutions like the National Museum of African Art returned him to national attention in the 1960s and 1970s.",
+                    "simplified_span": "After Bannister died in 1901, people forgot about him for many years. It wasn't until the 1960s and 1970s that museums started to show his work again and remind people of his importance.",
+                    "explanation": "The simplified version omits the specific mention of the 'National Museum of African Art,' which played a significant role in reviving interest in Bannister's work.",
+                    "suggested_fix": "After Bannister died in 1901, people forgot about him for many years. It wasn't until the 1960s and 1970s, when institutions like the National Museum of African Art started to show his work again, that people were reminded of his importance."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "similar to a group of French artists called the Barbizon school",
+                    "explanation": "The phrase 'similar to a group of French artists called the Barbizon school' introduces a comparison without explaining who the Barbizon school artists are, which may confuse readers unfamiliar with art history.",
+                    "suggested_fix": "similar to a group of French artists known for their realistic depictions of rural life, called the Barbizon school"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "This made him famous across the country.",
+                    "explanation": "The sentence 'This made him famous across the country.' is somewhat vague about what 'this' refers to, which could confuse readers.",
+                    "suggested_fix": "Winning the prize made him famous across the country."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Bannister loved to paint outdoor scenes, especially those inspired by the seaside in Rhode Island. He was also a sailor.",
+                    "explanation": "The transition between Bannister's love for painting outdoor scenes and his being a sailor is abrupt and lacks a clear connection.",
+                    "suggested_fix": "Bannister loved to paint outdoor scenes, especially those inspired by the seaside in Rhode Island, which he often explored as a sailor."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "He started his career as a photographer and portrait painter before focusing on landscapes.",
+                    "explanation": "The sentence structure is slightly clunky and could be made smoother for better fluency.",
+                    "suggested_fix": "He began his career as a photographer and portrait painter, eventually focusing on landscapes."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "As he got older, people became less interested in Bannister's style of painting.",
+                    "explanation": "The phrase 'As he got older, people became less interested in Bannister's style of painting.' lacks a clear logical connector to explain why this change in interest occurred.",
+                    "suggested_fix": "As he got older, changing art trends led to a decline in interest in Bannister's style of painting."
+                }
+            ]
+        }
+    },
+    {
+        "title": "Edward Mitchell Bannister",
+        "model_id": "openai_editor",
+        "original": "Edward Mitchell Bannister (November 2, 1828 – January 9, 1901) was a Canadian–American oil painter of the American Barbizon school. Born in colonial New Brunswick, he spent his adult life in New England in the United States. There, along with his wife Christiana Carteaux, he was a prominent member of African-American cultural and political communities, such as the Boston abolition movement. Bannister received national recognition after he won a first prize in painting at the 1876 Philadelphia Centennial Exhibition. He was also a founding member of the Providence Art Club and the Rhode Island School of Design.\nBannister's style and predominantly pastoral subject matter reflected his admiration for the French artist Jean-François Millet and the French Barbizon school. A lifelong sailor, he also looked to the Rhode Island seaside for inspiration. Bannister continually experimented, and his artwork displays his Idealist philosophy and his control of color and atmosphere. He began his professional practice as a photographer and portraitist before developing his better-known landscape style.\nLater in his life, Bannister's style of landscape painting fell out of favor. With decreasing painting sales, he and Christiana Carteaux moved out of College Hill in Providence to Boston and then a smaller house on Wilson Street in Providence. Bannister was overlooked in American art historical studies and exhibitions after his death in 1901, until institutions like the National Museum of African Art returned him to national attention in the 1960s and 1970s.\n\n",
+        "simplified": "Edward Mitchell Bannister (November 2, 1828 – January 9, 1901) was a Canadian-American who painted with oils and was part of the American Barbizon school. He was born in what is now New Brunswick, Canada, but he lived most of his adult life in New England, USA. There, he and his wife, Christiana Carteaux, were important in African-American cultural and political groups, like the Boston abolition movement. Bannister became well-known across the country after winning first prize in painting at the 1876 Philadelphia Centennial Exhibition. He helped start both the Providence Art Club and the Rhode Island School of Design.\n\nBannister's painting style showed his love for the French artist Jean-François Millet and the French Barbizon school. A sailor all his life, Bannister often found ideas for his paintings at the Rhode Island seaside. He liked to try new things, and his paintings show his Idealist ideas and skill with color and mood. He started out working as a photographer and portrait artist before becoming famous for his landscapes.\n\nTowards the end of his life, Bannister's landscape paintings were not as popular. This led to fewer sales, so he and Christiana Carteaux moved from College Hill in Providence to Boston and then to a smaller house on Wilson Street in Providence. After Bannister died in 1901, people didn't pay much attention to his work until the 1960s and 1970s when places like the National Museum of African Art helped bring him back into the spotlight.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Bannister was overlooked in American art historical studies and exhibitions after his death in 1901, until institutions like the National Museum of African Art returned him to national attention in the 1960s and 1970s.",
+                    "simplified_span": "After Bannister died in 1901, people didn't pay much attention to his work until the 1960s and 1970s when places like the National Museum of African Art helped bring him back into the spotlight.",
+                    "explanation": "The original text specifies that Bannister was overlooked in American art historical studies and exhibitions, which is a more precise context than the simplified version's 'people didn't pay much attention to his work.' The simplified version loses the specific context of art historical studies and exhibitions.",
+                    "suggested_fix": "Revise the simplified text to: 'After Bannister died in 1901, his work was largely overlooked in American art historical studies and exhibitions until the 1960s and 1970s, when places like the National Museum of African Art helped bring him back into the spotlight.'"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "who painted with oils",
+                    "explanation": "The phrase 'who painted with oils' is overly simplistic and could be more specific to enhance understanding.",
+                    "suggested_fix": "who was known for his oil paintings"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "important in African-American cultural and political groups, like the Boston abolition movement",
+                    "explanation": "The phrase 'important in African-American cultural and political groups, like the Boston abolition movement' is vague and could benefit from more specificity.",
+                    "suggested_fix": "active participants in African-American cultural and political groups, such as the Boston abolition movement"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Bannister's painting style showed his love for the French artist Jean-François Millet and the French Barbizon school.",
+                    "explanation": "The sentence structure is slightly awkward and could be improved for better fluency.",
+                    "suggested_fix": "Bannister's painting style reflected his admiration for the French artist Jean-François Millet and the Barbizon school."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "A sailor all his life, Bannister often found ideas for his paintings at the Rhode Island seaside.",
+                    "explanation": "The phrase 'A sailor all his life' is misleading as it suggests Bannister was primarily a sailor, which contradicts the focus on his painting career.",
+                    "suggested_fix": "Having spent much time by the sea, Bannister often found inspiration for his paintings at the Rhode Island seaside."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "He liked to try new things, and his paintings show his Idealist ideas and skill with color and mood.",
+                    "explanation": "The phrase 'Idealist ideas' is abstract and could be clarified for better understanding.",
+                    "suggested_fix": "He liked to experiment, and his paintings reflect his idealistic themes and skillful use of color and mood."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Towards the end of his life, Bannister's landscape paintings were not as popular.",
+                    "explanation": "The phrase 'not as popular' is vague and could be more specific to convey the decline in popularity.",
+                    "suggested_fix": "Towards the end of his life, Bannister's landscape paintings experienced a decline in popularity."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "people didn't pay much attention to his work until the 1960s and 1970s",
+                    "explanation": "The phrase 'people didn't pay much attention' is informal and could be more precise.",
+                    "suggested_fix": "his work received little recognition until the 1960s and 1970s"
+                }
+            ]
+        }
+    },
+    {
+        "title": "Edward Mitchell Bannister",
+        "model_id": "gemma_editor",
+        "original": "Edward Mitchell Bannister (November 2, 1828 – January 9, 1901) was a Canadian–American oil painter of the American Barbizon school. Born in colonial New Brunswick, he spent his adult life in New England in the United States. There, along with his wife Christiana Carteaux, he was a prominent member of African-American cultural and political communities, such as the Boston abolition movement. Bannister received national recognition after he won a first prize in painting at the 1876 Philadelphia Centennial Exhibition. He was also a founding member of the Providence Art Club and the Rhode Island School of Design.\nBannister's style and predominantly pastoral subject matter reflected his admiration for the French artist Jean-François Millet and the French Barbizon school. A lifelong sailor, he also looked to the Rhode Island seaside for inspiration. Bannister continually experimented, and his artwork displays his Idealist philosophy and his control of color and atmosphere. He began his professional practice as a photographer and portraitist before developing his better-known landscape style.\nLater in his life, Bannister's style of landscape painting fell out of favor. With decreasing painting sales, he and Christiana Carteaux moved out of College Hill in Providence to Boston and then a smaller house on Wilson Street in Providence. Bannister was overlooked in American art historical studies and exhibitions after his death in 1901, until institutions like the National Museum of African Art returned him to national attention in the 1960s and 1970s.\n\n",
+        "simplified": "Edward Mitchell Bannister was a Canadian-American painter who lived from 1828 to 1901. He painted using oil paints and was part of a style called the American Barbizon school. He was born in a small area of Canada called New Brunswick and later lived in New England, in the United States. \n\nHe and his wife, Christiana Carteaux, were active in important social and political groups, including the fight against slavery in Boston. Bannister became well-known after winning a prize at the 1876 Philadelphia Centennial Exhibition. He also helped start the Providence Art Club and the Rhode Island School of Design.\n\nBannister’s paintings often showed peaceful countryside scenes, and he was inspired by a French painter named Jean-François Millet and the Barbizon school. He had also spent much of his life as a sailor and found inspiration in the Rhode Island coast. He tried out different techniques and styles, and his work showed his beliefs and his skill with color and light. He started his art career taking photographs and painting portraits before focusing on landscapes.\n\nAs time went on, people didn’t really like his landscape paintings as much, and he sold fewer of them. He and his wife moved away from Providence to Boston and then to a smaller house on Wilson Street. For many years after he died in 1901, he wasn’t recognized by art historians or shown in important exhibitions. However, in the 1960s and 1970s, museums like the National Museum of African Art helped to bring his work back into the public eye.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Bannister continually experimented, and his artwork displays his Idealist philosophy and his control of color and atmosphere.",
+                    "simplified_span": "He tried out different techniques and styles, and his work showed his beliefs and his skill with color and light.",
+                    "explanation": "The simplified text does not accurately convey the specific mention of Bannister's 'Idealist philosophy' and 'control of color and atmosphere.' Instead, it vaguely refers to 'his beliefs' and 'skill with color and light,' which may not fully capture the philosophical and technical aspects emphasized in the original.",
+                    "suggested_fix": "He tried out different techniques and styles, and his work showed his Idealist philosophy and his skill with color and atmosphere."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Bannister was overlooked in American art historical studies and exhibitions after his death in 1901, until institutions like the National Museum of African Art returned him to national attention in the 1960s and 1970s.",
+                    "simplified_span": "For many years after he died in 1901, he wasn’t recognized by art historians or shown in important exhibitions. However, in the 1960s and 1970s, museums like the National Museum of African Art helped to bring his work back into the public eye.",
+                    "explanation": "The simplified text omits the specific mention of 'American art historical studies and exhibitions,' which provides context for where Bannister was overlooked. This omission slightly alters the understanding of the scope of his neglect.",
+                    "suggested_fix": "For many years after he died in 1901, he wasn’t recognized in American art historical studies or shown in important exhibitions. However, in the 1960s and 1970s, museums like the National Museum of African Art helped to bring his work back into the public eye."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "a small area of Canada called New Brunswick",
+                    "explanation": "The phrase 'a small area of Canada called New Brunswick' is imprecise. New Brunswick is a province, not a small area.",
+                    "suggested_fix": "a province in Canada called New Brunswick"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "He tried out different techniques and styles, and his work showed his beliefs and his skill with color and light.",
+                    "explanation": "The sentence contains multiple ideas that could be more clearly expressed if separated.",
+                    "suggested_fix": "He experimented with different techniques and styles. His work demonstrated his beliefs and his skill with color and light."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "He started his art career taking photographs and painting portraits before focusing on landscapes.",
+                    "explanation": "The sentence structure is slightly awkward and could be improved for better flow.",
+                    "suggested_fix": "He began his art career by taking photographs and painting portraits, before eventually focusing on landscapes."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "As time went on, people didn’t really like his landscape paintings as much, and he sold fewer of them.",
+                    "explanation": "The phrase 'people didn’t really like his landscape paintings as much' is informal and could be more precise.",
+                    "suggested_fix": "Over time, his landscape paintings became less popular, and he sold fewer of them."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "For many years after he died in 1901, he wasn’t recognized by art historians or shown in important exhibitions.",
+                    "explanation": "The sentence could be more concise and formal.",
+                    "suggested_fix": "For many years after his death in 1901, art historians did not recognize him, and his work was not featured in major exhibitions."
+                }
+            ]
+        }
+    }
+]

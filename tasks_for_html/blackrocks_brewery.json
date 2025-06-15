@@ -1,0 +1,561 @@
+[
+    {
+        "title": "Blackrocks Brewery",
+        "model_id": "claude_editor",
+        "original": "Blackrocks Brewery is a craft brewery in Marquette, Michigan, United States. Former pharmaceutical salesmen David Manson and Andy Langlois opened Blackrocks in 2010, taking the name from a local landmark. They originally brewed their products in the basement of a Victorian-style house and used the building's other two floors as a taproom.\nBy 2013, persistent demand for Blackrocks' beer led Manson and Langlois to add an outdoor patio and increase their brewing capacity. This included purchasing and converting a nearby former Coca-Cola bottling plant. In the early 2020s, they expanded the brewery's taproom into an adjacent property to double its available indoor area. As of 2024, Blackrocks is the largest craft brewery in Michigan's Upper Peninsula. Their most popular beer is 51K, an American IPA.\n\n",
+        "simplified": "Blackrocks Brewery is a small beer-making company in Marquette, Michigan. Two men, David Manson and Andy Langlois, started it in 2010. They used to sell medicine before opening the brewery. They named it after a well-known place in the area.\n\nAt first, they made beer in the basement of an old-style house. They used the other parts of the house to serve customers.\n\nIn 2013, many people wanted their beer. So, Manson and Langlois added an outdoor seating area and made more beer. They bought an old Coca-Cola factory nearby to make even more beer.\n\nIn the early 2020s, they made their serving area bigger by using the building next door. This gave them twice as much indoor space.\n\nAs of 2024, Blackrocks is the biggest small beer-making company in the northern part of Michigan. Their most popular beer is called 51K, which is a type of beer known as an American IPA.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Blackrocks Brewery is a craft brewery in Marquette, Michigan, United States.",
+                    "simplified_span": "Blackrocks Brewery is a small beer-making company in Marquette, Michigan.",
+                    "explanation": "The original specifies that Blackrocks Brewery is a 'craft brewery,' which is a specific type of brewery known for small-scale, independent, and traditional brewing methods. The simplified version describes it as a 'small beer-making company,' which loses the specific connotation of 'craft brewery.'",
+                    "suggested_fix": "Change 'small beer-making company' to 'craft brewery.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "As of 2024, Blackrocks is the largest craft brewery in Michigan's Upper Peninsula.",
+                    "simplified_span": "As of 2024, Blackrocks is the biggest small beer-making company in the northern part of Michigan.",
+                    "explanation": "The original specifies that Blackrocks is the largest craft brewery in Michigan's Upper Peninsula, which is a specific geographic area. The simplified version inaccurately describes it as the 'biggest small beer-making company in the northern part of Michigan,' which is less precise and could be misleading.",
+                    "suggested_fix": "Change 'biggest small beer-making company in the northern part of Michigan' to 'largest craft brewery in Michigan's Upper Peninsula.'"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "They used to sell medicine before opening the brewery.",
+                    "explanation": "The phrase 'sell medicine' is imprecise and could be clarified to better convey the previous profession of the founders.",
+                    "suggested_fix": "They used to work as pharmaceutical salesmen before opening the brewery."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "They named it after a well-known place in the area.",
+                    "explanation": "The sentence lacks specificity about what 'it' refers to, which can cause confusion for the reader.",
+                    "suggested_fix": "They named the brewery after a well-known place in the area."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "At first, they made beer in the basement of an old-style house. They used the other parts of the house to serve customers.",
+                    "explanation": "The sentence structure is repetitive, which affects the fluency of the text.",
+                    "suggested_fix": "Initially, they brewed beer in the basement of an old-style house and used the other parts to serve customers."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "In 2013, many people wanted their beer. So, Manson and Langlois added an outdoor seating area and made more beer.",
+                    "explanation": "The transition between the sentences is abrupt, affecting the coherence of the text.",
+                    "suggested_fix": "In 2013, as demand for their beer increased, Manson and Langlois added an outdoor seating area and expanded their production."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "As of 2024, Blackrocks is the biggest small beer-making company in the northern part of Michigan.",
+                    "explanation": "The phrase 'biggest small beer-making company' is contradictory and can be confusing.",
+                    "suggested_fix": "As of 2024, Blackrocks is the largest craft brewery in the northern part of Michigan."
+                }
+            ]
+        }
+    },
+    {
+        "title": "Blackrocks Brewery",
+        "model_id": "openai_editor",
+        "original": "Blackrocks Brewery is a craft brewery in Marquette, Michigan, United States. Former pharmaceutical salesmen David Manson and Andy Langlois opened Blackrocks in 2010, taking the name from a local landmark. They originally brewed their products in the basement of a Victorian-style house and used the building's other two floors as a taproom.\nBy 2013, persistent demand for Blackrocks' beer led Manson and Langlois to add an outdoor patio and increase their brewing capacity. This included purchasing and converting a nearby former Coca-Cola bottling plant. In the early 2020s, they expanded the brewery's taproom into an adjacent property to double its available indoor area. As of 2024, Blackrocks is the largest craft brewery in Michigan's Upper Peninsula. Their most popular beer is 51K, an American IPA.\n\n",
+        "simplified": "Blackrocks Brewery is a craft beer company in Marquette, Michigan, USA. David Manson and Andy Langlois, who used to work in pharmaceutical sales, started Blackrocks in 2010. They named it after a local place. At first, they made their beer in the basement of an old Victorian house and used the other two floors for a bar where people could drink their beer.\n\nBy 2013, the beer was so popular that Manson and Langlois decided to expand. They added an outdoor patio and made more beer. They did this by buying an old Coca-Cola bottling plant nearby and turning it into a place for brewing. In the early 2020s, they made the bar area bigger by using a nearby building, doubling the indoor space. As of 2024, Blackrocks is the largest craft brewery in the Upper Peninsula of Michigan. Their best-selling beer is an American IPA called 51K.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "taking the name from a local landmark",
+                    "simplified_span": "They named it after a local place",
+                    "explanation": "The original specifies that 'Blackrocks' is named after a local landmark, which implies a specific and notable feature, whereas the simplified version uses 'local place,' which is vague and loses the significance of the landmark.",
+                    "suggested_fix": "They named it after a local landmark."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "used the building's other two floors as a taproom",
+                    "simplified_span": "used the other two floors for a bar where people could drink their beer",
+                    "explanation": "The original specifies 'taproom,' which is a specific type of bar focused on serving beer directly from the brewery, while the simplified version uses 'bar,' which is more general and could imply a broader range of services.",
+                    "suggested_fix": "used the other two floors as a taproom where people could drink their beer"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "They named it after a local place.",
+                    "explanation": "The phrase 'a local place' is vague and does not specify which place the brewery is named after.",
+                    "suggested_fix": "They named it after a local landmark called Blackrocks."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "They did this by buying an old Coca-Cola bottling plant nearby and turning it into a place for brewing.",
+                    "explanation": "The phrase 'a place for brewing' is somewhat redundant and could be more specific.",
+                    "suggested_fix": "They did this by buying an old Coca-Cola bottling plant nearby and converting it into a brewery."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "In the early 2020s, they made the bar area bigger by using a nearby building, doubling the indoor space.",
+                    "explanation": "The sentence structure is slightly clunky and could be streamlined for better flow.",
+                    "suggested_fix": "In the early 2020s, they expanded the bar area by incorporating a nearby building, effectively doubling the indoor space."
+                }
+            ]
+        }
+    },
+    {
+        "title": "Blackrocks Brewery",
+        "model_id": "gemma_editor",
+        "original": "Blackrocks Brewery is a craft brewery in Marquette, Michigan, United States. Former pharmaceutical salesmen David Manson and Andy Langlois opened Blackrocks in 2010, taking the name from a local landmark. They originally brewed their products in the basement of a Victorian-style house and used the building's other two floors as a taproom.\nBy 2013, persistent demand for Blackrocks' beer led Manson and Langlois to add an outdoor patio and increase their brewing capacity. This included purchasing and converting a nearby former Coca-Cola bottling plant. In the early 2020s, they expanded the brewery's taproom into an adjacent property to double its available indoor area. As of 2024, Blackrocks is the largest craft brewery in Michigan's Upper Peninsula. Their most popular beer is 51K, an American IPA.\n\n",
+        "simplified": "Blackrocks Brewery is a small, independent brewery located in Marquette, Michigan. It was started in 2010 by two former drug sales people, David Manson and Andy Langlois, who chose the name because of a local rock formation. At first, they brewed their beer in the basement of a historic house and used the rest of the house as a place to sell it directly to customers.\n\nBecause people really liked their beer, they started expanding in 2013. They added an outdoor seating area and built a bigger brewing area by buying and renovating an old Coca-Cola bottling plant. In the early 2020s, they also added more space to their taproom by building onto a neighboring property, making it twice as big. \n\nAs of 2024, Blackrocks is now the biggest craft brewery in Michigan’s Upper Peninsula. Their most popular beer is called 51K, and it’s a type of American IPA.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Former pharmaceutical salesmen David Manson and Andy Langlois",
+                    "simplified_span": "two former drug sales people, David Manson and Andy Langlois",
+                    "explanation": "The simplified text refers to the founders as 'drug sales people,' which could imply illegal drug sales, whereas the original specifies 'pharmaceutical salesmen,' indicating legal, professional sales in the pharmaceutical industry.",
+                    "suggested_fix": "Change 'two former drug sales people' to 'two former pharmaceutical salesmen'."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "taking the name from a local landmark",
+                    "simplified_span": "who chose the name because of a local rock formation",
+                    "explanation": "The simplified text specifies 'a local rock formation,' which is more specific than the original's 'local landmark.' While this is a minor detail, it could mislead readers about the nature of the landmark.",
+                    "suggested_fix": "Change 'because of a local rock formation' to 'from a local landmark'."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "increase their brewing capacity",
+                    "simplified_span": "built a bigger brewing area",
+                    "explanation": "The original text emphasizes increasing brewing capacity, which involves more than just physical space, such as equipment and production capabilities. The simplified text focuses only on the physical expansion.",
+                    "suggested_fix": "Change 'built a bigger brewing area' to 'expanded their brewing capacity'."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "two former drug sales people",
+                    "explanation": "The term 'drug sales people' is imprecise and could be interpreted in various ways, potentially leading to confusion.",
+                    "suggested_fix": "two former pharmaceutical sales representatives"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Because people really liked their beer, they started expanding in 2013.",
+                    "explanation": "The sentence structure is somewhat clunky and could be made more concise for better fluency.",
+                    "suggested_fix": "Due to the popularity of their beer, they began expanding in 2013."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "making it twice as big",
+                    "explanation": "The phrase 'twice as big' is vague without a clear reference point for the original size.",
+                    "suggested_fix": "doubling its original size"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "As of 2024, Blackrocks is now the biggest craft brewery in Michigan’s Upper Peninsula.",
+                    "explanation": "The use of 'now' with 'As of 2024' is redundant and can be simplified.",
+                    "suggested_fix": "As of 2024, Blackrocks is the biggest craft brewery in Michigan’s Upper Peninsula."
+                }
+            ]
+        }
+    }
+]

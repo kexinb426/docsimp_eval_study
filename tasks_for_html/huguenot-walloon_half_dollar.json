@@ -1,0 +1,603 @@
+[
+    {
+        "title": "Huguenot-Walloon half dollar",
+        "model_id": "claude_editor",
+        "original": "The Huguenot-Walloon half dollar or Huguenot-Walloon Tercentenary half dollar is a commemorative coin issued by the United States Bureau of the Mint in 1924. It marks the 300th anniversary of the voyage of the Nieuw Nederlandt which landed in the New York area in 1624. Many of the passengers were Huguenots from France or French-speaking  Walloons from what is now Belgium; they became early settlers of New York State and the surrounding area.\nA commission run by the Federal Council of Churches in America sought issuance of a half dollar to mark the anniversary, and the bill passed through Congress without opposition in 1923 and was signed by President Warren G. Harding. Sketches were prepared by commission chairman Reverend John Baer Stoudt and converted to plaster models by the Mint's aging chief engraver, George T. Morgan. The models were initially rejected by the Commission of Fine Arts, which required revisions under the supervision of Buffalo nickel designer James Earle Fraser.\nOf the 300,000 coins authorized by Congress, fewer than half were actually struck, and of these, 55,000 were returned to the Mint and released into circulation. The coin excited some controversy because of its sponsorship by a religious group. The choice of William the Silent and Gaspard de Coligny to appear on the obverse was also questioned as the men are considered martyrs by the Huguenots and died decades before the voyage of the Nieuw Nederlandt. The coins are currently valued in the hundreds of dollars, depending on condition.\n\n",
+        "simplified": "The United States made a special coin in 1924 called the Huguenot-Walloon half dollar. This coin celebrated the 300th anniversary of a ship called the Nieuw Nederlandt arriving in New York in 1624. Many people on this ship were Huguenots from France and Walloons from what is now Belgium. These people helped start new communities in New York and nearby areas.\n\nA group of churches asked the government to make this coin. President Warren G. Harding agreed, and Congress approved it in 1923. A church leader named John Baer Stoudt drew the first designs. George T. Morgan, an older coin designer, turned these drawings into 3D models. At first, an art committee didn't like the designs. They asked for changes, which were overseen by James Earle Fraser, who had designed another famous coin.\n\nThe government allowed 300,000 coins to be made, but less than half were actually produced. Of these, 55,000 were later put into regular use as money. Some people didn't like that a religious group was involved in making the coin. Others questioned why William the Silent and Gaspard de Coligny were on the coin, as these men died long before the ship's voyage.\n\nToday, these coins are worth hundreds of dollars, depending on how well they've been kept.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "A commission run by the Federal Council of Churches in America sought issuance of a half dollar to mark the anniversary, and the bill passed through Congress without opposition in 1923 and was signed by President Warren G. Harding.",
+                    "simplified_span": "A group of churches asked the government to make this coin. President Warren G. Harding agreed, and Congress approved it in 1923.",
+                    "explanation": "The simplified text implies that President Harding's agreement was a separate step before Congress's approval, whereas the original text indicates that the bill passed through Congress without opposition and was then signed by the President.",
+                    "suggested_fix": "Revise to: 'A group of churches asked the government to make this coin, and Congress approved it without opposition in 1923, with President Warren G. Harding signing it into law.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Sketches were prepared by commission chairman Reverend John Baer Stoudt and converted to plaster models by the Mint's aging chief engraver, George T. Morgan.",
+                    "simplified_span": "A church leader named John Baer Stoudt drew the first designs. George T. Morgan, an older coin designer, turned these drawings into 3D models.",
+                    "explanation": "The simplified text omits that John Baer Stoudt was the commission chairman, which is relevant to understanding his role and authority in the process.",
+                    "suggested_fix": "Revise to: 'John Baer Stoudt, the commission chairman, drew the first designs. George T. Morgan, an older coin designer, turned these drawings into 3D models.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "The models were initially rejected by the Commission of Fine Arts, which required revisions under the supervision of Buffalo nickel designer James Earle Fraser.",
+                    "simplified_span": "At first, an art committee didn't like the designs. They asked for changes, which were overseen by James Earle Fraser, who had designed another famous coin.",
+                    "explanation": "The simplified text does not specify that the 'art committee' is the Commission of Fine Arts, which is a specific and relevant detail.",
+                    "suggested_fix": "Revise to: 'At first, the Commission of Fine Arts didn't like the designs. They asked for changes, which were overseen by James Earle Fraser, who had designed another famous coin.'"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "President Warren G. Harding agreed, and Congress approved it in 1923.",
+                    "explanation": "The sentence structure is slightly clunky due to the use of 'agreed' and 'approved' in close succession, which can make the sentence feel disjointed.",
+                    "suggested_fix": "President Warren G. Harding agreed to the proposal, and Congress approved it in 1923."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "George T. Morgan, an older coin designer, turned these drawings into 3D models.",
+                    "explanation": "The phrase 'an older coin designer' is somewhat awkward and could be more smoothly integrated into the sentence.",
+                    "suggested_fix": "George T. Morgan, a veteran coin designer, turned these drawings into 3D models."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "At first, an art committee didn't like the designs.",
+                    "explanation": "The phrase 'At first' is a bit abrupt and could be improved with a smoother transition to enhance the flow of the narrative.",
+                    "suggested_fix": "Initially, an art committee didn't approve of the designs."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "The government allowed 300,000 coins to be made, but less than half were actually produced.",
+                    "explanation": "The phrase 'less than half were actually produced' is slightly imprecise and could be clarified for better understanding.",
+                    "suggested_fix": "The government allowed 300,000 coins to be made, but only about 150,000 were actually produced."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Some people didn't like that a religious group was involved in making the coin.",
+                    "explanation": "The sentence lacks specificity about why the involvement of a religious group was controversial, which could leave readers unclear about the issue.",
+                    "suggested_fix": "Some people were concerned about the separation of church and state due to a religious group's involvement in making the coin."
+                }
+            ]
+        }
+    },
+    {
+        "title": "Huguenot-Walloon half dollar",
+        "model_id": "openai_editor",
+        "original": "The Huguenot-Walloon half dollar or Huguenot-Walloon Tercentenary half dollar is a commemorative coin issued by the United States Bureau of the Mint in 1924. It marks the 300th anniversary of the voyage of the Nieuw Nederlandt which landed in the New York area in 1624. Many of the passengers were Huguenots from France or French-speaking  Walloons from what is now Belgium; they became early settlers of New York State and the surrounding area.\nA commission run by the Federal Council of Churches in America sought issuance of a half dollar to mark the anniversary, and the bill passed through Congress without opposition in 1923 and was signed by President Warren G. Harding. Sketches were prepared by commission chairman Reverend John Baer Stoudt and converted to plaster models by the Mint's aging chief engraver, George T. Morgan. The models were initially rejected by the Commission of Fine Arts, which required revisions under the supervision of Buffalo nickel designer James Earle Fraser.\nOf the 300,000 coins authorized by Congress, fewer than half were actually struck, and of these, 55,000 were returned to the Mint and released into circulation. The coin excited some controversy because of its sponsorship by a religious group. The choice of William the Silent and Gaspard de Coligny to appear on the obverse was also questioned as the men are considered martyrs by the Huguenots and died decades before the voyage of the Nieuw Nederlandt. The coins are currently valued in the hundreds of dollars, depending on condition.\n\n",
+        "simplified": "The Huguenot-Walloon half dollar is a special coin made in 1924 by the U.S. Mint. It was created to celebrate 300 years since the Nieuw Nederlandt ship arrived in the New York area in 1624. Many people on the ship were Huguenots from France or French-speaking Walloons from what is now Belgium. They helped settle New York State.\n\nA group called the Federal Council of Churches in America wanted a half dollar coin made for the anniversary. The idea was approved by Congress without any disagreement in 1923 and signed into law by President Warren G. Harding. Reverend John Baer Stoudt created sketches for the coin, which were turned into models by George T. Morgan, the Mint's chief engraver. The Commission of Fine Arts did not approve the first models, so changes were made with help from James Earle Fraser, who designed the Buffalo nickel.\n\nAlthough Congress allowed 300,000 coins to be made, less than half were produced. Of these, 55,000 were sent back to the Mint and put into circulation as money. The coin caused some disagreement because a religious group requested it. People also questioned why William the Silent and Gaspard de Coligny were pictured on the front. These men are seen as heroes by the Huguenots, but they died many years before the Nieuw Nederlandt's voyage. Today, the coins are worth several hundred dollars, depending on their condition.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "The coin excited some controversy because of its sponsorship by a religious group.",
+                    "simplified_span": "The coin caused some disagreement because a religious group requested it.",
+                    "explanation": "The original text states that the coin caused controversy due to its sponsorship by a religious group, implying a broader and more significant issue than just a 'disagreement' caused by a request. The term 'sponsorship' suggests a formal and possibly financial backing, which is not captured by 'requested.'",
+                    "suggested_fix": "The coin caused some controversy because it was sponsored by a religious group."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "The choice of William the Silent and Gaspard de Coligny to appear on the obverse was also questioned as the men are considered martyrs by the Huguenots and died decades before the voyage of the Nieuw Nederlandt.",
+                    "simplified_span": "People also questioned why William the Silent and Gaspard de Coligny were pictured on the front. These men are seen as heroes by the Huguenots, but they died many years before the Nieuw Nederlandt's voyage.",
+                    "explanation": "The original text emphasizes that William the Silent and Gaspard de Coligny are considered martyrs by the Huguenots, which is a stronger and more specific term than 'heroes.' The term 'martyrs' implies they died for their beliefs, which is significant to the Huguenots' history and identity.",
+                    "suggested_fix": "People also questioned why William the Silent and Gaspard de Coligny were pictured on the front. These men are considered martyrs by the Huguenots and died many years before the Nieuw Nederlandt's voyage."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Nieuw Nederlandt",
+                    "explanation": "The term 'Nieuw Nederlandt' is not commonly known and may confuse readers unfamiliar with historical references.",
+                    "suggested_fix": "New Netherland"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Federal Council of Churches in America",
+                    "explanation": "The name of this group might not be familiar to all readers, and it could benefit from a brief explanation of its role or significance.",
+                    "suggested_fix": "Federal Council of Churches in America, a religious organization"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Reverend John Baer Stoudt created sketches for the coin, which were turned into models by George T. Morgan, the Mint's chief engraver.",
+                    "explanation": "The sentence contains multiple clauses that could be simplified for better readability.",
+                    "suggested_fix": "Reverend John Baer Stoudt created sketches for the coin. These sketches were turned into models by George T. Morgan, the Mint's chief engraver."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "The Commission of Fine Arts did not approve the first models, so changes were made with help from James Earle Fraser, who designed the Buffalo nickel.",
+                    "explanation": "The sentence contains multiple clauses that could be simplified for better readability.",
+                    "suggested_fix": "The Commission of Fine Arts did not approve the first models. Changes were made with help from James Earle Fraser, who designed the Buffalo nickel."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "less than half were produced",
+                    "explanation": "The phrase 'less than half' is vague and could be more precise to improve clarity.",
+                    "suggested_fix": "only about 150,000 were produced"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "The coin caused some disagreement because a religious group requested it.",
+                    "explanation": "The sentence is somewhat vague and could be more specific about the nature of the disagreement.",
+                    "suggested_fix": "The coin caused controversy because it was requested by a religious group, which some people felt was inappropriate for a government-issued coin."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "People also questioned why William the Silent and Gaspard de Coligny were pictured on the front.",
+                    "explanation": "The sentence could be clearer about the reason for questioning the choice of figures on the coin.",
+                    "suggested_fix": "People questioned why William the Silent and Gaspard de Coligny, who were not directly related to the Nieuw Nederlandt voyage, were pictured on the front."
+                }
+            ]
+        }
+    },
+    {
+        "title": "Huguenot-Walloon half dollar",
+        "model_id": "gemma_editor",
+        "original": "The Huguenot-Walloon half dollar or Huguenot-Walloon Tercentenary half dollar is a commemorative coin issued by the United States Bureau of the Mint in 1924. It marks the 300th anniversary of the voyage of the Nieuw Nederlandt which landed in the New York area in 1624. Many of the passengers were Huguenots from France or French-speaking  Walloons from what is now Belgium; they became early settlers of New York State and the surrounding area.\nA commission run by the Federal Council of Churches in America sought issuance of a half dollar to mark the anniversary, and the bill passed through Congress without opposition in 1923 and was signed by President Warren G. Harding. Sketches were prepared by commission chairman Reverend John Baer Stoudt and converted to plaster models by the Mint's aging chief engraver, George T. Morgan. The models were initially rejected by the Commission of Fine Arts, which required revisions under the supervision of Buffalo nickel designer James Earle Fraser.\nOf the 300,000 coins authorized by Congress, fewer than half were actually struck, and of these, 55,000 were returned to the Mint and released into circulation. The coin excited some controversy because of its sponsorship by a religious group. The choice of William the Silent and Gaspard de Coligny to appear on the obverse was also questioned as the men are considered martyrs by the Huguenots and died decades before the voyage of the Nieuw Nederlandt. The coins are currently valued in the hundreds of dollars, depending on condition.\n\n",
+        "simplified": "In 1924, the United States Mint made a special coin called the Huguenot-Walloon half dollar to celebrate a historic event. This coin marked the 300th anniversary of a ship called the Nieuw Nederlandt, which arrived in the New York area in 1624. Many people on board were Huguenots – French Protestants – and French-speaking Walloons – people from what is now Belgium. They were among the first settlers in New York and the surrounding region.\n\nA group of churches asked the government to create a coin to honor this anniversary, and Congress approved the idea in 1923. President Warren G. Harding signed the law. A man named Reverend John Baer Stoudt, who led the church group, helped design the coin, and the Mint’s chief engraver, George T. Morgan, made plaster models based on his designs.\n\nHowever, the Commission of Fine Arts, which checked the designs, didn’t like them at first and asked for changes. James Earle Fraser, who designed the Buffalo nickel, helped improve the designs.  Congress had authorized 300,000 coins, but only about 55,000 were actually made and put into circulation.\n\nThe coin caused some debate because it was supported by a religious group. Also, some people questioned why William the Silent and Gaspard de Coligny were chosen to be on the coin’s front – they are considered martyrs by the Huguenots and died long before the ship arrived. Today, these coins are worth hundreds of dollars, depending on how well they are preserved.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Of the 300,000 coins authorized by Congress, fewer than half were actually struck, and of these, 55,000 were returned to the Mint and released into circulation.",
+                    "simplified_span": "Congress had authorized 300,000 coins, but only about 55,000 were actually made and put into circulation.",
+                    "explanation": "The simplified text incorrectly states that only about 55,000 coins were made and put into circulation, whereas the original text indicates that fewer than half of the authorized coins were struck, and 55,000 of those were returned to the Mint and released into circulation.",
+                    "suggested_fix": "Revise the simplified text to: 'Congress had authorized 300,000 coins, but fewer than half were actually made, and 55,000 of those were returned to the Mint and put into circulation.'"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "the Huguenot-Walloon half dollar",
+                    "explanation": "The term 'Huguenot-Walloon half dollar' might be unfamiliar to general readers and is not explained in the text.",
+                    "suggested_fix": "the Huguenot-Walloon half dollar, a commemorative coin"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Nieuw Nederlandt",
+                    "explanation": "The name 'Nieuw Nederlandt' is not explained, which might confuse readers unfamiliar with historical ships.",
+                    "suggested_fix": "Nieuw Nederlandt, a ship that carried early settlers"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "A group of churches asked the government to create a coin to honor this anniversary, and Congress approved the idea in 1923.",
+                    "explanation": "This sentence contains multiple ideas that could be separated for clarity.",
+                    "suggested_fix": "A group of churches asked the government to create a coin to honor this anniversary. Congress approved the idea in 1923."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "President Warren G. Harding signed the law.",
+                    "explanation": "This sentence is abrupt and lacks a transition from the previous sentence.",
+                    "suggested_fix": "After Congress approved the idea in 1923, President Warren G. Harding signed the law."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "A man named Reverend John Baer Stoudt, who led the church group, helped design the coin, and the Mint’s chief engraver, George T. Morgan, made plaster models based on his designs.",
+                    "explanation": "This sentence is long and contains multiple clauses, which can make it difficult to follow.",
+                    "suggested_fix": "Reverend John Baer Stoudt, who led the church group, helped design the coin. The Mint’s chief engraver, George T. Morgan, made plaster models based on Stoudt's designs."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "The coin caused some debate because it was supported by a religious group.",
+                    "explanation": "The reason for the debate is not fully explained, which could leave readers confused.",
+                    "suggested_fix": "The coin caused some debate because it was supported by a religious group, raising concerns about the separation of church and state."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Also, some people questioned why William the Silent and Gaspard de Coligny were chosen to be on the coin’s front – they are considered martyrs by the Huguenots and died long before the ship arrived.",
+                    "explanation": "The sentence structure is somewhat clunky and could be smoother.",
+                    "suggested_fix": "Additionally, some questioned the choice of William the Silent and Gaspard de Coligny for the coin’s front, as they are considered Huguenot martyrs and died long before the ship's arrival."
+                }
+            ]
+        }
+    }
+]

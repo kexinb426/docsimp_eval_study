@@ -1,0 +1,617 @@
+[
+    {
+        "title": "Ancestry of the Godwins",
+        "model_id": "claude_editor",
+        "original": "Very little is known for certain of the ancestry of the Godwins, the family of the last Anglo-Saxon king of England, Harold II. When King Edward the Confessor died in January 1066 his closest relative was his great-nephew, Edgar the Ætheling, but he was young and lacked powerful supporters. Harold was the head of the most powerful family in England and Edward's brother-in-law, and he became king. In September 1066 Harold defeated and killed King Harald Hardrada of Norway at the Battle of Stamford Bridge, and Harold was himself defeated and killed the following month by William the Conqueror at the Battle of Hastings.\nThe family is named after Harold's father, Earl Godwin, who had risen to a position of wealth and influence in the 1020s under Danish King Cnut the Great. In 1045 Godwin's daughter, Edith, married King Edward the Confessor, and by the mid-1050s Harold and his brothers had become dominant, almost monopolising the English earldoms. Godwin's origin is obscure. He was probably the son of Wulfnoth Cild, a South Saxon thegn, but Wulfnoth's ancestry is disputed. A few genealogists and historians argue that he was descended from Alfred the Great's elder brother, King Æthelred I (865–71), but almost all historians of Anglo-Saxon England reject this theory.",
+        "simplified": "Here's a simplified version of the text:\n\nWe don't know much about the family history of Harold II, the last Anglo-Saxon king of England. When King Edward the Confessor died in January 1066, his closest relative was his young great-nephew, Edgar. However, Edgar didn't have strong supporters. Harold, who was the most powerful man in England and Edward's brother-in-law, became king instead.\n\nIn September 1066, Harold defeated and killed the Norwegian King Harald Hardrada in battle. But the next month, Harold himself was killed by William the Conqueror in the Battle of Hastings.\n\nHarold's family is named after his father, Earl Godwin. Godwin became rich and powerful in the 1020s under the Danish King Cnut. In 1045, Godwin's daughter Edith married King Edward. By the mid-1050s, Harold and his brothers controlled most of the important positions in England.\n\nWe're not sure about Godwin's background. He was probably the son of Wulfnoth Cild, a local leader from southern England, but we don't know much about Wulfnoth's family. Some people think Godwin was related to King Alfred the Great's older brother, but most experts don't believe this.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Edgar the Ætheling",
+                    "simplified_span": "Edgar",
+                    "explanation": "The simplified text omits the title 'the Ætheling,' which is significant as it denotes Edgar's royal lineage and potential claim to the throne.",
+                    "suggested_fix": "Include the title 'the Ætheling' to preserve the significance of Edgar's royal status."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Harold was the head of the most powerful family in England",
+                    "simplified_span": "Harold, who was the most powerful man in England",
+                    "explanation": "The simplified text changes the emphasis from Harold's family being powerful to Harold himself being the most powerful man, which is a distortion of the original meaning.",
+                    "suggested_fix": "Rephrase to 'Harold, who was the head of the most powerful family in England,' to maintain the original emphasis on the family's power."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Harold was himself defeated and killed the following month by William the Conqueror at the Battle of Hastings.",
+                    "simplified_span": "But the next month, Harold himself was killed by William the Conqueror in the Battle of Hastings.",
+                    "explanation": "The simplified text omits the fact that Harold was defeated before being killed, which is an important detail about the Battle of Hastings.",
+                    "suggested_fix": "Include 'defeated and' before 'killed' to accurately reflect the sequence of events."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "almost monopolising the English earldoms",
+                    "simplified_span": "controlled most of the important positions in England",
+                    "explanation": "The simplified text generalizes the specific detail about the Godwin family's dominance over the English earldoms, which is a significant aspect of their power.",
+                    "suggested_fix": "Rephrase to 'controlled most of the English earldoms' to retain the specific detail about their influence."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "A few genealogists and historians argue that he was descended from Alfred the Great's elder brother, King Æthelred I (865–71), but almost all historians of Anglo-Saxon England reject this theory.",
+                    "simplified_span": "Some people think Godwin was related to King Alfred the Great's older brother, but most experts don't believe this.",
+                    "explanation": "The simplified text omits the specific names and dates associated with King Æthelred I, which are important for historical context.",
+                    "suggested_fix": "Include 'King Æthelred I (865–71)' to provide the necessary historical context."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "We don't know much about the family history of Harold II, the last Anglo-Saxon king of England.",
+                    "explanation": "The sentence introduces Harold II without providing any context or explanation about his significance or the time period.",
+                    "suggested_fix": "Harold II, the last Anglo-Saxon king of England, has a family history that remains largely unknown."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Harold, who was the most powerful man in England and Edward's brother-in-law, became king instead.",
+                    "explanation": "The sentence contains multiple clauses that could be simplified for clarity.",
+                    "suggested_fix": "Harold, Edward's brother-in-law and the most powerful man in England, became king instead."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Harold's family is named after his father, Earl Godwin.",
+                    "explanation": "The sentence is slightly awkward and could be rephrased for better fluency.",
+                    "suggested_fix": "Harold's family took their name from his father, Earl Godwin."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Godwin became rich and powerful in the 1020s under the Danish King Cnut.",
+                    "explanation": "The sentence could benefit from a clearer logical connector to explain the relationship between Godwin's rise and King Cnut.",
+                    "suggested_fix": "Godwin became rich and powerful in the 1020s, serving under the Danish King Cnut."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "We're not sure about Godwin's background.",
+                    "explanation": "The sentence is vague and lacks specificity about what is uncertain regarding Godwin's background.",
+                    "suggested_fix": "Details about Godwin's background remain uncertain."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Some people think Godwin was related to King Alfred the Great's older brother, but most experts don't believe this.",
+                    "explanation": "The sentence presents a contradiction without a clear explanation of why experts disagree.",
+                    "suggested_fix": "Some people speculate that Godwin was related to King Alfred the Great's older brother, though most experts dispute this claim due to lack of evidence."
+                }
+            ]
+        }
+    },
+    {
+        "title": "Ancestry of the Godwins",
+        "model_id": "openai_editor",
+        "original": "Very little is known for certain of the ancestry of the Godwins, the family of the last Anglo-Saxon king of England, Harold II. When King Edward the Confessor died in January 1066 his closest relative was his great-nephew, Edgar the Ætheling, but he was young and lacked powerful supporters. Harold was the head of the most powerful family in England and Edward's brother-in-law, and he became king. In September 1066 Harold defeated and killed King Harald Hardrada of Norway at the Battle of Stamford Bridge, and Harold was himself defeated and killed the following month by William the Conqueror at the Battle of Hastings.\nThe family is named after Harold's father, Earl Godwin, who had risen to a position of wealth and influence in the 1020s under Danish King Cnut the Great. In 1045 Godwin's daughter, Edith, married King Edward the Confessor, and by the mid-1050s Harold and his brothers had become dominant, almost monopolising the English earldoms. Godwin's origin is obscure. He was probably the son of Wulfnoth Cild, a South Saxon thegn, but Wulfnoth's ancestry is disputed. A few genealogists and historians argue that he was descended from Alfred the Great's elder brother, King Æthelred I (865–71), but almost all historians of Anglo-Saxon England reject this theory.",
+        "simplified": "We don't know much about the family history of the Godwins. They were the family of Harold II, the last Anglo-Saxon king of England. When King Edward the Confessor died in January 1066, his closest relative was his great-nephew, Edgar the Ætheling. However, Edgar was young and didn't have strong supporters. Harold was the leader of the most powerful family in England and was married to Edward's sister, so he became king. In September 1066, Harold won a battle against King Harald Hardrada of Norway at Stamford Bridge but was killed the next month by William the Conqueror at the Battle of Hastings.\n\nThe family was named after Harold's father, Earl Godwin, who became rich and influential in the 1020s during the reign of the Danish King Cnut the Great. In 1045, Godwin's daughter, Edith, married King Edward the Confessor. By the mid-1050s, Harold and his brothers held most of the important positions in England. Godwin's background is unclear. He was likely the son of Wulfnoth Cild, a noble from South Saxons, but people disagree about Wulfnoth's ancestry. Some genealogists and historians think he was related to King Alfred the Great's older brother, King Æthelred I, but most historians of Anglo-Saxon England do not agree with this idea.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "Harold was the head of the most powerful family in England and Edward's brother-in-law, and he became king.",
+                    "simplified_span": "Harold was the leader of the most powerful family in England and was married to Edward's sister, so he became king.",
+                    "explanation": "The simplified text incorrectly states that Harold was married to Edward's sister, which is not mentioned in the original text. The original text states that Harold was Edward's brother-in-law, which could mean he was married to Edward's sister or that Edward was married to Harold's sister. The latter is correct as per the original text.",
+                    "suggested_fix": "Change the simplified text to: 'Harold was the leader of the most powerful family in England and Edward's brother-in-law, so he became king.'"
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "almost monopolising the English earldoms",
+                    "simplified_span": "held most of the important positions in England",
+                    "explanation": "The simplified text loses the nuance of 'almost monopolising,' which implies a near-complete control, whereas 'held most of the important positions' is less strong and specific.",
+                    "suggested_fix": "Change the simplified text to: 'almost monopolising the important positions in England.'"
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "We don't know much about the family history of the Godwins.",
+                    "explanation": "The sentence is vague and lacks specificity about what is unknown regarding the Godwins' family history.",
+                    "suggested_fix": "The details of the Godwins' family history are largely unknown."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Harold was the leader of the most powerful family in England and was married to Edward's sister, so he became king.",
+                    "explanation": "The sentence contains multiple ideas that could be separated for clarity.",
+                    "suggested_fix": "Harold was the leader of the most powerful family in England. He was also married to Edward's sister, which helped him become king."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "The family was named after Harold's father, Earl Godwin, who became rich and influential in the 1020s during the reign of the Danish King Cnut the Great.",
+                    "explanation": "The sentence contains multiple ideas that could be separated for clarity.",
+                    "suggested_fix": "The family was named after Harold's father, Earl Godwin. He became rich and influential in the 1020s during the reign of the Danish King Cnut the Great."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Godwin's background is unclear.",
+                    "explanation": "The sentence is vague and lacks specificity about what is unclear regarding Godwin's background.",
+                    "suggested_fix": "Details about Godwin's background are unclear."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "He was likely the son of Wulfnoth Cild, a noble from South Saxons, but people disagree about Wulfnoth's ancestry.",
+                    "explanation": "The sentence contains multiple ideas that could be separated for clarity.",
+                    "suggested_fix": "He was likely the son of Wulfnoth Cild, a noble from South Saxons. However, there is disagreement about Wulfnoth's ancestry."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Some genealogists and historians think he was related to King Alfred the Great's older brother, King Æthelred I, but most historians of Anglo-Saxon England do not agree with this idea.",
+                    "explanation": "The sentence contains multiple ideas that could be separated for clarity.",
+                    "suggested_fix": "Some genealogists and historians think he was related to King Alfred the Great's older brother, King Æthelred I. However, most historians of Anglo-Saxon England do not agree with this idea."
+                }
+            ]
+        }
+    },
+    {
+        "title": "Ancestry of the Godwins",
+        "model_id": "gemma_editor",
+        "original": "Very little is known for certain of the ancestry of the Godwins, the family of the last Anglo-Saxon king of England, Harold II. When King Edward the Confessor died in January 1066 his closest relative was his great-nephew, Edgar the Ætheling, but he was young and lacked powerful supporters. Harold was the head of the most powerful family in England and Edward's brother-in-law, and he became king. In September 1066 Harold defeated and killed King Harald Hardrada of Norway at the Battle of Stamford Bridge, and Harold was himself defeated and killed the following month by William the Conqueror at the Battle of Hastings.\nThe family is named after Harold's father, Earl Godwin, who had risen to a position of wealth and influence in the 1020s under Danish King Cnut the Great. In 1045 Godwin's daughter, Edith, married King Edward the Confessor, and by the mid-1050s Harold and his brothers had become dominant, almost monopolising the English earldoms. Godwin's origin is obscure. He was probably the son of Wulfnoth Cild, a South Saxon thegn, but Wulfnoth's ancestry is disputed. A few genealogists and historians argue that he was descended from Alfred the Great's elder brother, King Æthelred I (865–71), but almost all historians of Anglo-Saxon England reject this theory.",
+        "simplified": "We don’t really know much about where the Godwin family came from, which is the family of Harold II, the last Anglo-Saxon king of England. \n\nWhen King Edward died in 1066, his closest relative was his nephew, Edgar the Ætheling, but Edgar was young and didn’t have many supporters. Harold Godwin was a very important family leader in England, and he was also Edward’s brother-in-law, so he became king. In September 1066, Harold won a victory against King Harald Hardrada of Norway at the Battle of Stamford Bridge, but he was later defeated and killed by William the Conqueror at the Battle of Hastings the following month.\n\nThe Godwin family’s name comes from Harold’s father, Earl Godwin. Earl Godwin became rich and powerful in the 1020s while serving King Cnut the Great, who was Danish. In 1045, Godwin’s daughter, Edith, married King Edward the Confessor. By the mid-1050s, Harold and his brothers had become the most powerful landowners in England, almost controlling all the earldoms (important regions ruled by earls).\n\nHowever, where Godwin himself came from is unclear. He was likely the son of Wulfnoth Cild, a nobleman from the south of England. But there’s a lot of debate about Wulfnoth’s family history. Some people believe he might be descended from Alfred the Great’s older brother, King Æthelred I, but most historians who study Anglo-Saxon England disagree with this idea.",
+        "evaluation": {
+            "overall_questions": [
+                {
+                    "key": "fluency",
+                    "label": "Fluency: How grammatically correct and well-formed are the sentences?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Many sentences are ungrammatical or nonsensical."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Some sentences are awkward or contain errors."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Mostly fluent, with a few minor awkward phrases."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The text reads naturally with no errors."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The language is exceptionally well-formed and articulate."
+                        }
+                    ]
+                },
+                {
+                    "key": "clarity",
+                    "label": "Clarity: As a stand-alone text, how clear and easy is it to understand the main points?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unclear",
+                            "description": "The text is confusing and the main points are hard to grasp."
+                        },
+                        {
+                            "label": "2 - Unclear",
+                            "description": "Some parts of the text are confusing or ambiguous."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is generally understandable, but could be clearer."
+                        },
+                        {
+                            "label": "4 - Clear",
+                            "description": "The text is easy to understand."
+                        },
+                        {
+                            "label": "5 - Very Clear",
+                            "description": "The text is exceptionally easy to follow and unambiguous."
+                        }
+                    ]
+                },
+                {
+                    "key": "conciseness",
+                    "label": "Conciseness: Is the text succinct or does it use unnecessary words?",
+                    "options": [
+                        {
+                            "label": "1 - Very Wordy",
+                            "description": "The text is highly repetitive or uses many unnecessary words."
+                        },
+                        {
+                            "label": "2 - Wordy",
+                            "description": "The text is somewhat repetitive or wordy."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The text is mostly concise but could be tightened."
+                        },
+                        {
+                            "label": "4 - Concise",
+                            "description": "The text is direct and to the point."
+                        },
+                        {
+                            "label": "5 - Very Concise",
+                            "description": "Every word serves a clear purpose."
+                        }
+                    ]
+                },
+                {
+                    "key": "style",
+                    "label": "Style: How appropriate and natural is the writing style?",
+                    "options": [
+                        {
+                            "label": "1 - Very Unnatural",
+                            "description": "The style feels robotic, 'dumbed down,' or childish."
+                        },
+                        {
+                            "label": "2 - Slightly Unnatural",
+                            "description": "The style is a bit simplistic or awkward in places."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "The style is functional but not particularly engaging."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "The style is clear, simple, and appropriate for a general audience."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "The style is engaging and perfectly suited for the topic."
+                        }
+                    ]
+                },
+                {
+                    "key": "overall_impression",
+                    "label": "Overall: As a stand-alone piece of writing, what is your overall impression of this text?",
+                    "options": [
+                        {
+                            "label": "1 - Very Poor",
+                            "description": "Unacceptable quality, many flaws."
+                        },
+                        {
+                            "label": "2 - Poor",
+                            "description": "Has significant flaws that detract from the text."
+                        },
+                        {
+                            "label": "3 - Acceptable",
+                            "description": "Generally okay, but with noticeable room for improvement."
+                        },
+                        {
+                            "label": "4 - Good",
+                            "description": "Well-written and effective with only minor issues."
+                        },
+                        {
+                            "label": "5 - Excellent",
+                            "description": "Exceptionally clear, fluent, and well-written."
+                        }
+                    ]
+                }
+            ],
+            "simplicity_issues": [
+                {
+                    "type": "meaning",
+                    "original_span": "his great-nephew, Edgar the Ætheling",
+                    "simplified_span": "his nephew, Edgar the Ætheling",
+                    "explanation": "The simplified text incorrectly states that Edgar the Ætheling was King Edward's nephew, whereas the original text correctly identifies him as his great-nephew.",
+                    "suggested_fix": "Change 'his nephew, Edgar the Ætheling' to 'his great-nephew, Edgar the Ætheling'."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "Harold was the head of the most powerful family in England",
+                    "simplified_span": "Harold Godwin was a very important family leader in England",
+                    "explanation": "The simplified text underplays the extent of Harold's power by describing him as a 'very important family leader' rather than the head of the most powerful family in England.",
+                    "suggested_fix": "Change 'a very important family leader in England' to 'the head of the most powerful family in England'."
+                },
+                {
+                    "type": "meaning",
+                    "original_span": "almost monopolising the English earldoms",
+                    "simplified_span": "almost controlling all the earldoms",
+                    "explanation": "The simplified text suggests complete control over the earldoms, whereas the original text implies dominance but not absolute control.",
+                    "suggested_fix": "Change 'almost controlling all the earldoms' to 'almost monopolising the English earldoms'."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "We don’t really know much about where the Godwin family came from, which is the family of Harold II, the last Anglo-Saxon king of England.",
+                    "explanation": "The sentence is long and contains multiple clauses, which can make it difficult to follow.",
+                    "suggested_fix": "We don’t really know much about the origins of the Godwin family. This family includes Harold II, the last Anglo-Saxon king of England."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Harold Godwin was a very important family leader in England, and he was also Edward’s brother-in-law, so he became king.",
+                    "explanation": "The sentence contains multiple ideas that could be separated for clarity.",
+                    "suggested_fix": "Harold Godwin was a very important family leader in England. He was also Edward’s brother-in-law, which helped him become king."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Harold won a victory against King Harald Hardrada of Norway at the Battle of Stamford Bridge, but he was later defeated and killed by William the Conqueror at the Battle of Hastings the following month.",
+                    "explanation": "The sentence contains multiple events that could be separated for clarity.",
+                    "suggested_fix": "Harold won a victory against King Harald Hardrada of Norway at the Battle of Stamford Bridge. However, he was later defeated and killed by William the Conqueror at the Battle of Hastings the following month."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "Earl Godwin became rich and powerful in the 1020s while serving King Cnut the Great, who was Danish.",
+                    "explanation": "The phrase 'who was Danish' is an interruption that could be integrated more smoothly.",
+                    "suggested_fix": "Earl Godwin became rich and powerful in the 1020s while serving the Danish King Cnut the Great."
+                },
+                {
+                    "type": "writing",
+                    "original_span": null,
+                    "simplified_span": "But there’s a lot of debate about Wulfnoth’s family history.",
+                    "explanation": "The sentence starts with 'But,' which can be informal and abrupt in written text.",
+                    "suggested_fix": "However, there’s a lot of debate about Wulfnoth’s family history."
+                }
+            ]
+        }
+    }
+]
